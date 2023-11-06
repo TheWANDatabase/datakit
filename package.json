@@ -1,0 +1,26 @@
+{
+  "name": "datakit",
+  "version": "0.0.12-alpha.15",
+  "description": "The database schema for the wan db",
+  "main": "dist/main.js",
+  "scripts": {
+    "migrate": "tsc && node dist/migrate.js",
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/pg": "^8.10.3",
+    "bun-types": "^1.0.3",
+    "drizzle-kit": "^0.19.13"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.28.6",
+    "pg": "^8.11.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/TheWANDatabase"
+  }
+}
