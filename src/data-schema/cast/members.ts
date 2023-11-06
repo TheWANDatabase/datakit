@@ -1,10 +1,10 @@
-import {media} from "./media";
+import {media} from "../media";
+import {jobs} from "./jobs";
 
 import {jsonb, pgTable, serial, text, uuid} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
-import {castPositions} from "./castPositions";
 
-export const cast = pgTable('cast_members', {
+export const members = pgTable('cast_members', {
   id: serial('id').primaryKey().unique(),
   alias: text('alias'),
   forename: text('forename'),
@@ -14,8 +14,12 @@ export const cast = pgTable('cast_members', {
   socials: jsonb('socials').$type<CastSocials>(),
 })
 
-export const castRelations = relations(cast, ({many}) => ({
-  positions: many(castPositions)
+export const castRelations = relations(members, ({one, many}) => ({
+  positions: many(jobs),
+  avatar: one(media, {
+    fields: [members.avatar],
+    references: [media.id]
+  })
 }))
 
 export type CastSocials = {

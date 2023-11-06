@@ -1,1 +1,1 @@
-{"version":3,"file":"castPositions.d.ts","sourceRoot":"","sources":["../../src/data-schema/castPositions.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,aAAa;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAQxB,CAAA;AAEF,eAAO,MAAM,sBAAsB;;EAKhC,CAAA"}
+{"version":3,"file":"jobs.d.ts","sourceRoot":"","sources":["../../src/data-schema/jobs.ts"],"names":[],"mappings":"AAKA,eAAO,MAAM,aAAa;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAQxB,CAAA;AAEF,eAAO,MAAM,sBAAsB;;EAKhC,CAAA"}

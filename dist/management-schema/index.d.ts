@@ -11,7 +11,7 @@ export declare const timeSeriesTables: import("drizzle-orm/pg-core").PgTableWith
             data: Date;
             driverParam: string;
             notNull: true;
-            hasDefault: false;
+            hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;

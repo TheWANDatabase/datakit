@@ -92,4 +92,4 @@ export declare const castPositions: import("drizzle-orm/pg-core").PgTableWithCol
 export declare const castPositionsRelations: import("drizzle-orm").Relations<"cast_positions", {
     castMember: import("drizzle-orm").One<"cast_members", false>;
 }>;
-//# sourceMappingURL=castPositions.d.ts.map
+//# sourceMappingURL=jobs.d.ts.map

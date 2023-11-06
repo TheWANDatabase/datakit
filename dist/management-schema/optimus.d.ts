@@ -10,7 +10,7 @@ export declare const optimus: import("drizzle-orm/pg-core").PgTableWithColumns<{
             data: Date;
             driverParam: string;
             notNull: true;
-            hasDefault: false;
+            hasDefault: true;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;

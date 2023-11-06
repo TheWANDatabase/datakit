@@ -1,12 +1,10 @@
-import {exec} from "child_process";
+import {exec, spawn} from "child_process";
 import {Client} from "./client";
 
-async function wrapExec(command: string) {
+async function wrapExec(command: string, args: string[]) {
   return new Promise((resolve, reject) => {
-    exec(command, (err, stdout, stderr) => {
-      if (err) return reject(err);
-      resolve(stdout);
-    });
+    let child = spawn(command, args, {stdio: 'inherit'});
+    child.on('close', resolve);
   })
 }
 
@@ -19,10 +17,20 @@ async function runMigrations() {
 
 
   console.log("> Generating data schema...")
-  migrationsResults.data = await wrapExec('npx drizzle-kit generate:pg --schema=./src/data-schema --out=./migrations/data-schema');
+  migrationsResults.data = await wrapExec('npx', [
+    "drizzle-kit",
+    "generate:pg",
+    "--schema=./src/data-schema",
+    "--out=./migrations/data-schema"
+  ]);
 
   console.log("> Generating management schema...")
-  migrationsResults.management = await wrapExec('npx drizzle-kit generate:pg --schema=./src/management-schema --out=./migrations/management-schema');
+  migrationsResults.management = await wrapExec('npx', [
+    "drizzle-kit",
+    "generate:pg",
+    "--schema=./src/management-schema",
+    "--out=./migrations/management-schema"
+  ]);
 
 
   console.log("Running migrations...")
