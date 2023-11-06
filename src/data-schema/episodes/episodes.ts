@@ -10,7 +10,7 @@ import {merchMessages} from "../merchMessages/message";
 
 export const episodes = pgTable('episodes', {
   id: varchar('id', {length: 12}).primaryKey().unique(),
-  floatplane: varchar('floatplane', {length: 12}).unique(),``
+  floatplane: varchar('floatplane', {length: 12}).unique(),
   title: text('title').default('Title Unavailable'),
   description: text('description').default('Description Unavailable'),
   thumbnail: uuid('thumbnail').unique().references(() => media.id),
