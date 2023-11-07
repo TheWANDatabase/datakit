@@ -50,6 +50,42 @@ export declare const cdn: import("drizzle-orm/pg-core").PgTableWithColumns<{
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
+        entitySizeMin: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_size_min";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        entitySizeMax: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_size_max";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        entitySizeDeviation: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_size_deviation";
+            tableName: "cdn";
+            dataType: "string";
+            columnType: "PgNumeric";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
         entityCountTotal: import("drizzle-orm/pg-core").PgColumn<{
             name: "entity_count_total";
             tableName: "cdn";
@@ -86,6 +122,42 @@ export declare const cdn: import("drizzle-orm/pg-core").PgTableWithColumns<{
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
+        entityCountMin: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_count_min";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        entityCountMax: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_count_max";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        entityCountDeviation: import("drizzle-orm/pg-core").PgColumn<{
+            name: "entity_count_deviation";
+            tableName: "cdn";
+            dataType: "string";
+            columnType: "PgNumeric";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
         queueBacklogTotal: import("drizzle-orm/pg-core").PgColumn<{
             name: "queue_backlog_total";
             tableName: "cdn";
@@ -112,6 +184,42 @@ export declare const cdn: import("drizzle-orm/pg-core").PgTableWithColumns<{
         }, {}, {}>;
         queueBacklogAverage: import("drizzle-orm/pg-core").PgColumn<{
             name: "queue_backlog_average";
+            tableName: "cdn";
+            dataType: "string";
+            columnType: "PgNumeric";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        queueBacklogMin: import("drizzle-orm/pg-core").PgColumn<{
+            name: "queue_backlog_min";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        queueBacklogMax: import("drizzle-orm/pg-core").PgColumn<{
+            name: "queue_backlog_max";
+            tableName: "cdn";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        queueBacklogDeviation: import("drizzle-orm/pg-core").PgColumn<{
+            name: "queue_backlog_deviation";
             tableName: "cdn";
             dataType: "string";
             columnType: "PgNumeric";
