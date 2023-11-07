@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.commentsRelations = exports.comments = void 0;
+const pg_core_1 = require("drizzle-orm/pg-core");
+const changes_1 = require("./changes");
+const accounts_1 = require("../users/accounts");
+const drizzle_orm_1 = require("drizzle-orm");
+exports.comments = (0, pg_core_1.pgTable)('topics_comments', {
+    id: (0, pg_core_1.integer)('id').primaryKey(),
+    changeId: (0, pg_core_1.integer)('change_id').references(() => changes_1.changes.id),
+    message: (0, pg_core_1.text)('message'),
+    added: (0, pg_core_1.timestamp)('added').defaultNow(),
+    authorId: (0, pg_core_1.integer)('author').references(() => accounts_1.accounts.id),
+});
+exports.commentsRelations = (0, drizzle_orm_1.relations)(exports.comments, ({ one }) => ({
+    change: one(changes_1.changes, {
+        fields: [exports.comments.changeId],
+        references: [changes_1.changes.id]
+    }),
+    author: one(accounts_1.accounts, {
+        fields: [exports.comments.authorId],
+        references: [accounts_1.accounts.id]
+    })
+}));

@@ -20,27 +20,15 @@ async function runMigrations() {
   migrationsResults.data = await wrapExec('npx', [
     "drizzle-kit",
     "generate:pg",
-    "--schema=./src/data-schema",
-    "--out=./migrations/data-schema"
+    "--schema=./src/schema",
+    "--out=./migrations"
   ]);
-
-  console.log("> Generating management schema...")
-  migrationsResults.management = await wrapExec('npx', [
-    "drizzle-kit",
-    "generate:pg",
-    "--schema=./src/management-schema",
-    "--out=./migrations/management-schema"
-  ]);
-
-
   console.log("Running migrations...")
   let client = new Client();
 
   console.log("> Running data schema migrations...")
-  await client.migrate(client.data, './migrations/data-schema');
+  await client.migrate('./migrations');
 
-  console.log("> Running management schema migrations...")
-  await client.migrate(client.management, './migrations/management-schema');
 
 }
 
