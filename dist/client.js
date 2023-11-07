@@ -39,7 +39,7 @@ class Client {
     data;
     constructor() {
         this.dataPool = new pg_1.Pool({
-            connectionString: process.env.DATABASE_URL + '/postgres',
+            connectionString: process.env.DATABASE_URL,
             ...defaultConfig,
         });
         this.data = (0, node_postgres_1.drizzle)(this.dataPool);

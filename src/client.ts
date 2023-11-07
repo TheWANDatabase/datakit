@@ -18,7 +18,7 @@ export class Client {
   public data: NodePgDatabase<Record<string, never>>;
   constructor() {
     this.dataPool = new Pool({
-      connectionString: process.env.DATABASE_URL + '/postgres',
+      connectionString: process.env.DATABASE_URL,
       ...defaultConfig,
     });
 
