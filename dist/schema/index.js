@@ -45,6 +45,7 @@ __exportStar(require("./lttstore/models"), exports);
 /* ===================== */
 __exportStar(require("./management/stats"), exports);
 __exportStar(require("./management/seedtube"), exports);
+__exportStar(require("./management/cdn"), exports);
 /* ===================== */
 /* === Merch Message === */
 /* ===================== */

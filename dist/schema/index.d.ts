@@ -12,6 +12,7 @@ export * from "./lttstore/productImage";
 export * from "./lttstore/models";
 export * from "./management/stats";
 export * from "./management/seedtube";
+export * from "./management/cdn";
 export * from "./merchMessages/message";
 export * from "./merchMessages/reply";
 export * from "./sponsors/campaigns";
