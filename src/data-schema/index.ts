@@ -19,6 +19,7 @@ export * from "./companies/companies"
 export * from "./episodes/episodes"
 export * from "./episodes/transcripts"
 export * from "./episodes/speakers"
+export * from "./episodes/episodeMarkers"
 
 /* ====================== */
 /* == LTTStore Exports == */
@@ -49,12 +50,12 @@ export * from "./topics/changes"
 export * from "./topics/comments"
 
 /* ===================== */
-/* === Media Exports === */
-/* ===================== */
-export * from "./media"
-
-/* ===================== */
 /* === User Exports === */
 /* ===================== */
 export * from "./users/accounts"
 export * from "./users/settings"
+
+/* ===================== */
+/* === Media Exports === */
+/* ===================== */
+export * from "./media"

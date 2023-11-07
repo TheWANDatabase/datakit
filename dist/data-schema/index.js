@@ -32,6 +32,7 @@ __exportStar(require("./companies/companies"), exports);
 __exportStar(require("./episodes/episodes"), exports);
 __exportStar(require("./episodes/transcripts"), exports);
 __exportStar(require("./episodes/speakers"), exports);
+__exportStar(require("./episodes/episodeMarkers"), exports);
 /* ====================== */
 /* == LTTStore Exports == */
 /* ====================== */
@@ -57,11 +58,11 @@ __exportStar(require("./topics/changelog"), exports);
 __exportStar(require("./topics/changes"), exports);
 __exportStar(require("./topics/comments"), exports);
 /* ===================== */
-/* === Media Exports === */
-/* ===================== */
-__exportStar(require("./media"), exports);
-/* ===================== */
 /* === User Exports === */
 /* ===================== */
 __exportStar(require("./users/accounts"), exports);
 __exportStar(require("./users/settings"), exports);
+/* ===================== */
+/* === Media Exports === */
+/* ===================== */
+__exportStar(require("./media"), exports);

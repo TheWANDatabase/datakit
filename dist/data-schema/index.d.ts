@@ -5,6 +5,7 @@ export * from "./companies/companies";
 export * from "./episodes/episodes";
 export * from "./episodes/transcripts";
 export * from "./episodes/speakers";
+export * from "./episodes/episodeMarkers";
 export * from "./lttstore/products";
 export * from "./lttstore/productLinker";
 export * from "./lttstore/productImage";
@@ -17,7 +18,7 @@ export * from "./topics/topics";
 export * from "./topics/changelog";
 export * from "./topics/changes";
 export * from "./topics/comments";
-export * from "./media";
 export * from "./users/accounts";
 export * from "./users/settings";
+export * from "./media";
 //# sourceMappingURL=index.d.ts.map
