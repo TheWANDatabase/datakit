@@ -28,6 +28,7 @@ export * from "./lttstore/products"
 export * from "./lttstore/productLinker"
 export * from "./lttstore/productImage"
 export * from "./lttstore/models"
+export * from "./lttstore/variants"
 
 /* ===================== */
 /* = Management Export = */

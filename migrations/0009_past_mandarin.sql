@@ -1,0 +1,1 @@
+ALTER TABLE "management"."stats" ADD COLUMN "ltt_product_photos_indexed" integer DEFAULT 0 NOT NULL;

@@ -1,0 +1,2 @@
+ALTER TABLE "management"."stats" ADD COLUMN "ltt_products_total_price" numeric DEFAULT '0.00' NOT NULL;--> statement-breakpoint
+ALTER TABLE "management"."stats" ADD COLUMN "ltt_variant_total_price" numeric DEFAULT '0.00' NOT NULL;

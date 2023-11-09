@@ -10,6 +10,7 @@ export * from "./lttstore/products";
 export * from "./lttstore/productLinker";
 export * from "./lttstore/productImage";
 export * from "./lttstore/models";
+export * from "./lttstore/variants";
 export * from "./management/stats";
 export * from "./management/seedtube";
 export * from "./management/cdn";

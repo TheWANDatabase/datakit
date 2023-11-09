@@ -1,0 +1,2 @@
+ALTER TABLE "data"."lttstore_products" ADD COLUMN "is_out_of_stock" boolean DEFAULT false NOT NULL;--> statement-breakpoint
+ALTER TABLE "data"."lttstore_variants" ADD COLUMN "is_out_of_stock" boolean DEFAULT false NOT NULL;

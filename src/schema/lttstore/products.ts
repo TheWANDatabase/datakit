@@ -1,4 +1,16 @@
-import {boolean, jsonb, numeric, pgTable, real, serial, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
+import {
+  boolean,
+  integer,
+  jsonb,
+  numeric,
+  pgTable,
+  real,
+  serial,
+  text,
+  timestamp,
+  uuid,
+  varchar
+} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
@@ -26,8 +38,11 @@ export const products = dataSchema.table('lttstore_products', {
   title: text('title').notNull(),
   isOnSale: boolean('is_on_sale').notNull().default(false),
   standardPrice: real('standard_price').notNull().default(0),
-  salePrice: real('sale_price').notNull().default(0)
-
+  salePrice: real('sale_price').notNull().default(0),
+  variantCount: integer('variant_count').notNull().default(0),
+  type: varchar('product_type', {length: 128}).notNull().default(''),
+  retired: boolean('retired').notNull().default(false),
+  isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
 })
 
 export const productsRelations = relations(products, ({many}) => ({

@@ -1,0 +1,1 @@
+ALTER TABLE "management"."stats" RENAME COLUMN "ltt_variant_total_price" TO "ltt_variants_total_price";

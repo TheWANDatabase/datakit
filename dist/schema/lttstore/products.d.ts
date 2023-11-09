@@ -95,6 +95,54 @@ export declare const products: import("drizzle-orm/pg-core").PgTableWithColumns<
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
+        variantCount: import("drizzle-orm/pg-core").PgColumn<{
+            name: "variant_count";
+            tableName: "lttstore_products";
+            dataType: "number";
+            columnType: "PgInteger";
+            data: number;
+            driverParam: string | number;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        type: import("drizzle-orm/pg-core").PgColumn<{
+            name: "product_type";
+            tableName: "lttstore_products";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
+        retired: import("drizzle-orm/pg-core").PgColumn<{
+            name: "retired";
+            tableName: "lttstore_products";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        isOutOfStock: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_out_of_stock";
+            tableName: "lttstore_products";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
     };
     dialect: "pg";
 }>;

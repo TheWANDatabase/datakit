@@ -40,6 +40,7 @@ __exportStar(require("./lttstore/products"), exports);
 __exportStar(require("./lttstore/productLinker"), exports);
 __exportStar(require("./lttstore/productImage"), exports);
 __exportStar(require("./lttstore/models"), exports);
+__exportStar(require("./lttstore/variants"), exports);
 /* ===================== */
 /* = Management Export = */
 /* ===================== */

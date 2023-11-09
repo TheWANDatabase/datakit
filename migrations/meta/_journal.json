@@ -29,6 +29,69 @@
       "when": 1699392372401,
       "tag": "0003_omniscient_iron_monger",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1699540998981,
+      "tag": "0004_powerful_polaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1699541169606,
+      "tag": "0005_sleepy_monster_badoon",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1699541297954,
+      "tag": "0006_luxuriant_shooting_star",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1699542049328,
+      "tag": "0007_abnormal_tyrannus",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1699542190138,
+      "tag": "0008_young_scarlet_spider",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1699542229015,
+      "tag": "0009_past_mandarin",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1699542400582,
+      "tag": "0010_yielding_silver_fox",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1699543775655,
+      "tag": "0011_violet_lethal_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "5",
+      "when": 1699543929092,
+      "tag": "0012_bumpy_steel_serpent",
+      "breakpoints": true
     }
   ]
 }
