@@ -146,6 +146,18 @@ export declare const variants: import("drizzle-orm/pg-core").PgTableWithColumns<
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
+        lastUpdated: import("drizzle-orm/pg-core").PgColumn<{
+            name: "last_updated";
+            tableName: "lttstore_variants";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
     };
     dialect: "pg";
 }>;

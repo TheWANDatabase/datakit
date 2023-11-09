@@ -18,6 +18,7 @@ exports.variants = schema_1.dataSchema.table('lttstore_variants', {
     image: (0, pg_core_1.uuid)('image').references(() => media_1.media.id),
     retired: (0, pg_core_1.boolean)('retired').notNull().default(false),
     isOutOfStock: (0, pg_core_1.boolean)('is_out_of_stock').notNull().default(false),
+    lastUpdated: (0, pg_core_1.timestamp)('last_updated').notNull().defaultNow()
 });
 const variantsRelations = (0, drizzle_orm_1.relations)(exports.variants, ({ one }) => ({
     product: one(exports.variants)

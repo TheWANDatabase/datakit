@@ -1,5 +1,5 @@
 import {dataSchema} from "../schema";
-import {boolean, integer, numeric, serial, text, uuid} from "drizzle-orm/pg-core";
+import {boolean, integer, numeric, serial, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {media} from "../media";
 import {relations} from "drizzle-orm";
 
@@ -16,6 +16,7 @@ export const variants = dataSchema.table('lttstore_variants', {
   image: uuid('image').references(() => media.id),
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
+  lastUpdated: timestamp('last_updated').notNull().defaultNow()
 })
 
 const variantsRelations = relations(variants, ({one}) => ({
