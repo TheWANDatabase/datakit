@@ -6,11 +6,11 @@ export declare const variants: import("drizzle-orm/pg-core").PgTableWithColumns<
             name: "id";
             tableName: "lttstore_variants";
             dataType: "number";
-            columnType: "PgSerial";
+            columnType: "PgBigInt53";
             data: number;
-            driverParam: number;
+            driverParam: string | number;
             notNull: true;
-            hasDefault: true;
+            hasDefault: false;
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;

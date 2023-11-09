@@ -1,10 +1,10 @@
 import {dataSchema} from "../schema";
-import {boolean, integer, numeric, serial, text, timestamp, uuid} from "drizzle-orm/pg-core";
+import {bigint, boolean, integer, numeric, serial, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {media} from "../media";
 import {relations} from "drizzle-orm";
 
 export const variants = dataSchema.table('lttstore_variants', {
-  id: serial('id').primaryKey().unique(),
+  id: bigint('id', {mode: 'number'}).primaryKey().unique(),
   productId: integer('product_id').notNull(),
   price: numeric('price', {precision: 10, scale: 2}).notNull(),
   salePrice: numeric('sale_price', {precision: 10, scale: 2}).notNull(),

@@ -6,7 +6,7 @@ const pg_core_1 = require("drizzle-orm/pg-core");
 const media_1 = require("../media");
 const drizzle_orm_1 = require("drizzle-orm");
 exports.variants = schema_1.dataSchema.table('lttstore_variants', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.bigint)('id', { mode: 'number' }).primaryKey().unique(),
     productId: (0, pg_core_1.integer)('product_id').notNull(),
     price: (0, pg_core_1.numeric)('price', { precision: 10, scale: 2 }).notNull(),
     salePrice: (0, pg_core_1.numeric)('sale_price', { precision: 10, scale: 2 }).notNull(),
