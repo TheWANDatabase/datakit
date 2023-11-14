@@ -21,5 +21,8 @@ exports.variants = schema_1.dataSchema.table('lttstore_variants', {
     lastUpdated: (0, pg_core_1.timestamp)('last_updated').notNull().defaultNow()
 });
 const variantsRelations = (0, drizzle_orm_1.relations)(exports.variants, ({ one }) => ({
-    product: one(exports.variants)
+    product: one(exports.variants, {
+        fields: [exports.variants.productId],
+        references: [exports.variants.id]
+    })
 }));

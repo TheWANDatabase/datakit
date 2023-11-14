@@ -15,6 +15,8 @@ exports.campaigns = schema_1.dataSchema.table('sponsors_campaigns', {
     modified: (0, pg_core_1.timestamp)('modified').defaultNow(),
     companyId: (0, pg_core_1.integer)('company').references(() => companies_1.companies.id),
     isDennis: (0, pg_core_1.boolean)('is_dennis'),
+    start: (0, pg_core_1.timestamp)('start'),
+    end: (0, pg_core_1.timestamp)('end'),
     safe: (0, pg_core_1.boolean)('safe') // Set true by default, but can be set to false if the sponsor company was dropped for ethical reasons
 });
 exports.campaignsRelations = (0, drizzle_orm_1.relations)(exports.campaigns, ({ many, one }) => ({

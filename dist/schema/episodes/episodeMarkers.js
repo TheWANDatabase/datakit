@@ -20,6 +20,10 @@ exports.episodeMarkers = schema_1.dataSchema.table('episodes_markers', {
     topicCount: (0, pg_core_1.integer)('topic_count').default(0),
     productCount: (0, pg_core_1.integer)('product_count').default(0),
     castCount: (0, pg_core_1.integer)('cast_count').default(0),
+}, (table) => {
+    return {
+        contentWarningIdx: (0, pg_core_1.index)('content_warning_idx').on(table.contentWarning).asc(),
+    };
 });
 exports.episodeMarkersRelations = (0, drizzle_orm_1.relations)(exports.episodeMarkers, ({ one }) => ({
     episode: one(episodes_1.episodes, {

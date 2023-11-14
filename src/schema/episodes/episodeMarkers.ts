@@ -1,4 +1,4 @@
-import {boolean, integer, pgTable, varchar} from "drizzle-orm/pg-core";
+import {boolean, index, integer, varchar} from "drizzle-orm/pg-core";
 import {episodes} from "./episodes";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
@@ -18,6 +18,10 @@ export const episodeMarkers = dataSchema.table('episodes_markers', {
   topicCount: integer('topic_count').default(0),
   productCount: integer('product_count').default(0),
   castCount: integer('cast_count').default(0),
+}, (table) => {
+  return {
+    contentWarningIdx: index('content_warning_idx').on(table.contentWarning).asc(),
+  }
 })
 
 export const episodeMarkersRelations = relations(episodeMarkers, ({one}) => ({

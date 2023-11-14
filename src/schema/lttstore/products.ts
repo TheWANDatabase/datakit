@@ -1,16 +1,4 @@
-import {
-  boolean,
-  integer,
-  jsonb,
-  numeric,
-  pgTable,
-  real,
-  serial,
-  text,
-  timestamp,
-  uuid,
-  varchar
-} from "drizzle-orm/pg-core";
+import {boolean, integer, real, serial, text, timestamp, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
@@ -43,8 +31,13 @@ export const products = dataSchema.table('lttstore_products', {
   type: varchar('product_type', {length: 128}).notNull().default(''),
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
+  supersededBy: varchar('superseded_by', {length: 128}).notNull().default(''),
 })
 
-export const productsRelations = relations(products, ({many}) => ({
-  images: many(products)
+export const productsRelations = relations(products, ({one, many}) => ({
+  images: many(products),
+  supersededBy: one(products, {
+    fields: [products.supersededBy],
+    references: [products.productId]
+  }),
 }))

@@ -1,5 +1,5 @@
 import {dataSchema} from "../schema";
-import {bigint, boolean, integer, numeric, serial, text, timestamp, uuid} from "drizzle-orm/pg-core";
+import {bigint, boolean, integer, numeric, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {media} from "../media";
 import {relations} from "drizzle-orm";
 
@@ -20,5 +20,8 @@ export const variants = dataSchema.table('lttstore_variants', {
 })
 
 const variantsRelations = relations(variants, ({one}) => ({
-  product: one(variants)
+  product: one(variants, {
+    fields: [variants.productId],
+    references: [variants.id]
+  })
 }));

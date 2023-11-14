@@ -18,6 +18,12 @@ exports.episodes = schema_1.dataSchema.table('episodes', {
     thumbnail: (0, pg_core_1.uuid)('thumbnail').unique().references(() => media_1.media.id),
     aired: (0, pg_core_1.timestamp)('aired').defaultNow(),
     duration: (0, pg_core_1.integer)('duration'),
+}, (table) => {
+    return {
+        airedIdx: (0, pg_core_1.index)('aired_idx').on(table.aired).desc(),
+        durationIdx: (0, pg_core_1.index)('duration_idx').on(table.duration).desc(),
+        titleIdx: (0, pg_core_1.index)('title_idx').on(table.title).desc(),
+    };
 });
 exports.episodesRelations = (0, drizzle_orm_1.relations)(exports.episodes, ({ one, many }) => ({
     castMembers: many(credits_1.credits),

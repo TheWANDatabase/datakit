@@ -29,7 +29,12 @@ exports.products = schema_1.dataSchema.table('lttstore_products', {
     type: (0, pg_core_1.varchar)('product_type', { length: 128 }).notNull().default(''),
     retired: (0, pg_core_1.boolean)('retired').notNull().default(false),
     isOutOfStock: (0, pg_core_1.boolean)('is_out_of_stock').notNull().default(false),
+    supersededBy: (0, pg_core_1.varchar)('superseded_by', {length: 128}).notNull().default(''),
 });
-exports.productsRelations = (0, drizzle_orm_1.relations)(exports.products, ({ many }) => ({
-    images: many(exports.products)
+exports.productsRelations = (0, drizzle_orm_1.relations)(exports.products, ({one, many}) => ({
+    images: many(exports.products),
+    supersededBy: one(exports.products, {
+        fields: [exports.products.supersededBy],
+        references: [exports.products.productId]
+    }),
 }));
