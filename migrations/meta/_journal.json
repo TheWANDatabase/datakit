@@ -141,6 +141,20 @@
       "when": 1700329187181,
       "tag": "0019_right_black_bird",
       "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "5",
+      "when": 1700333063853,
+      "tag": "0020_complete_firelord",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "5",
+      "when": 1700333143344,
+      "tag": "0021_rapid_rafael_vega",
+      "breakpoints": true
     }
   ]
 }
