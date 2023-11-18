@@ -36,6 +36,7 @@ export * from "./lttstore/variants"
 export * from "./management/stats"
 export * from "./management/seedtube"
 export * from "./management/cdn"
+export * from "./management/logs"
 
 /* ===================== */
 /* === Merch Message === */
