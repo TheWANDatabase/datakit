@@ -93,30 +93,30 @@ export declare const campaigns: import("drizzle-orm/pg-core").PgTableWithColumns
             columnType: "PgBoolean";
             data: boolean;
             driverParam: boolean;
-          notNull: false;
-          hasDefault: false;
-          enumValues: undefined;
-          baseColumn: never;
+            notNull: false;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
         }, {}, {}>;
-      start: import("drizzle-orm/pg-core").PgColumn<{
-        name: "start";
-        tableName: "sponsors_campaigns";
-        dataType: "date";
-        columnType: "PgTimestamp";
-        data: Date;
-        driverParam: string;
-        notNull: false;
-        hasDefault: false;
-        enumValues: undefined;
-        baseColumn: never;
-      }, {}, {}>;
-      end: import("drizzle-orm/pg-core").PgColumn<{
-        name: "end";
-        tableName: "sponsors_campaigns";
-        dataType: "date";
-        columnType: "PgTimestamp";
-        data: Date;
-        driverParam: string;
+        start: import("drizzle-orm/pg-core").PgColumn<{
+            name: "start";
+            tableName: "sponsors_campaigns";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        end: import("drizzle-orm/pg-core").PgColumn<{
+            name: "end";
+            tableName: "sponsors_campaigns";
+            dataType: "date";
+            columnType: "PgTimestamp";
+            data: Date;
+            driverParam: string;
             notNull: false;
             hasDefault: false;
             enumValues: undefined;

@@ -1,5 +1,5 @@
 import {managementSchema} from "../schema";
-import {bigint, index, jsonb, text} from "drizzle-orm/pg-core";
+import {bigint, index, jsonb, text, timestamp} from "drizzle-orm/pg-core";
 
 
 export const logs = managementSchema.table('logs', {
@@ -8,6 +8,7 @@ export const logs = managementSchema.table('logs', {
   level: text('level').notNull(),
   message: text('message').notNull(),
   meta: jsonb('meta'),
+    time: timestamp('time').notNull().defaultNow(),
 }, (table) => {
   return {
     sourceIdx: index('source_idx').on(table.source).desc(),

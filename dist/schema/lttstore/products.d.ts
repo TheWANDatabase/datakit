@@ -143,23 +143,23 @@ export declare const products: import("drizzle-orm/pg-core").PgTableWithColumns<
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
-      supersededBy: import("drizzle-orm/pg-core").PgColumn<{
-        name: "superseded_by";
-        tableName: "lttstore_products";
-        dataType: "string";
-        columnType: "PgVarchar";
-        data: string;
-        driverParam: string;
-        notNull: true;
-        hasDefault: true;
-        enumValues: [string, ...string[]];
-        baseColumn: never;
-      }, {}, {}>;
+        supersededBy: import("drizzle-orm/pg-core").PgColumn<{
+            name: "superseded_by";
+            tableName: "lttstore_products";
+            dataType: "string";
+            columnType: "PgVarchar";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+        }, {}, {}>;
     };
     dialect: "pg";
 }>;
 export declare const productsRelations: import("drizzle-orm").Relations<"lttstore_products", {
     images: import("drizzle-orm").Many<"lttstore_products">;
-  supersededBy: import("drizzle-orm").One<"lttstore_products", true>;
+    supersededBy: import("drizzle-orm").One<"lttstore_products", true>;
 }>;
 //# sourceMappingURL=products.d.ts.map
