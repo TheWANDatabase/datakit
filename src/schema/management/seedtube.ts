@@ -1,15 +1,15 @@
-import {index, jsonb, numeric, text, timestamp} from "drizzle-orm/pg-core";
+import {boolean, index, numeric, text, timestamp} from "drizzle-orm/pg-core";
 import {managementSchema} from "../schema";
 
 export const seedtube = managementSchema.table('seedtube', {
   time: timestamp('time').unique().primaryKey().defaultNow(),
 
-  currentImminence: numeric('current_imminence').notNull(),
-  currentTextImminence: text('current_text_imminence').notNull(),
-  secondsSinceLastUpdate: numeric('seconds_since_last_update').notNull(),
-  title: text('title'),
-  sponsors: jsonb('sponsors'),
-  thumbnail: text('thumbnail'),
+  live: boolean('live').notNull(),
+  wan: boolean('wan').notNull(),
+  title: text('title').notNull(),
+  thumbnail: text('thumbnail').notNull(),
+  imminence: numeric('imminence').notNull(),
+  textImminence: text('text_imminence').notNull()
 }, (table) => {
   return {
     timeIdx: index('time_idx').on(table.time).desc(),
