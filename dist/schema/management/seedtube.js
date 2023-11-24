@@ -9,7 +9,7 @@ exports.seedtube = schema_1.managementSchema.table('seedtube', {
     wan: (0, pg_core_1.boolean)('wan').notNull(),
     title: (0, pg_core_1.text)('title').notNull(),
     thumbnail: (0, pg_core_1.text)('thumbnail').notNull(),
-    imminence: (0, pg_core_1.numeric)('imminence').notNull(),
+    imminence: (0, pg_core_1.integer)('imminence').notNull(),
     textImminence: (0, pg_core_1.text)('text_imminence').notNull()
 }, (table) => {
     return {

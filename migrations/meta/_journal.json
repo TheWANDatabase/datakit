@@ -169,6 +169,13 @@
       "when": 1700681847967,
       "tag": "0023_flashy_zuras",
       "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "5",
+      "when": 1700800890340,
+      "tag": "0024_familiar_tarantula",
+      "breakpoints": true
     }
   ]
 }

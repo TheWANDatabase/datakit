@@ -65,10 +65,10 @@ export declare const seedtube: import("drizzle-orm/pg-core").PgTableWithColumns<
       imminence: import("drizzle-orm/pg-core").PgColumn<{
         name: "imminence";
             tableName: "seedtube";
-        dataType: "string";
-        columnType: "PgNumeric";
-        data: string;
-        driverParam: string;
+        dataType: "number";
+        columnType: "PgInteger";
+        data: number;
+        driverParam: string | number;
         notNull: true;
             hasDefault: false;
             enumValues: undefined;

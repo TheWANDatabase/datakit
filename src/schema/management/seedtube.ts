@@ -1,4 +1,4 @@
-import {boolean, index, numeric, text, timestamp} from "drizzle-orm/pg-core";
+import {boolean, index, integer, text, timestamp} from "drizzle-orm/pg-core";
 import {managementSchema} from "../schema";
 
 export const seedtube = managementSchema.table('seedtube', {
@@ -8,7 +8,7 @@ export const seedtube = managementSchema.table('seedtube', {
   wan: boolean('wan').notNull(),
   title: text('title').notNull(),
   thumbnail: text('thumbnail').notNull(),
-  imminence: numeric('imminence').notNull(),
+  imminence: integer('imminence').notNull(),
   textImminence: text('text_imminence').notNull()
 }, (table) => {
   return {
