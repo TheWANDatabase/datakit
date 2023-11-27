@@ -48,6 +48,7 @@ __exportStar(require("./management/stats"), exports);
 __exportStar(require("./management/seedtube"), exports);
 __exportStar(require("./management/cdn"), exports);
 __exportStar(require("./management/logs"), exports);
+__exportStar(require("./management/lateness"), exports);
 /* ===================== */
 /* === Merch Message === */
 /* ===================== */

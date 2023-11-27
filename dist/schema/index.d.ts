@@ -15,6 +15,7 @@ export * from "./management/stats";
 export * from "./management/seedtube";
 export * from "./management/cdn";
 export * from "./management/logs";
+export * from "./management/lateness";
 export * from "./merchMessages/message";
 export * from "./merchMessages/reply";
 export * from "./sponsors/campaigns";

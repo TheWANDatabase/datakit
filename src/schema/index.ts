@@ -37,6 +37,7 @@ export * from "./management/stats"
 export * from "./management/seedtube"
 export * from "./management/cdn"
 export * from "./management/logs"
+export * from "./management/lateness"
 
 /* ===================== */
 /* === Merch Message === */
