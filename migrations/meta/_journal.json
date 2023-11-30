@@ -190,6 +190,27 @@
       "when": 1701099679935,
       "tag": "0026_married_eternity",
       "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "5",
+      "when": 1701357133681,
+      "tag": "0027_ordinary_doctor_spectrum",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "5",
+      "when": 1701371716123,
+      "tag": "0028_talented_captain_marvel",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "5",
+      "when": 1701371895039,
+      "tag": "0029_rapid_mad_thinker",
+      "breakpoints": true
     }
   ]
 }

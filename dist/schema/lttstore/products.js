@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 exports.productsRelations = exports.products = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
@@ -17,7 +17,7 @@ exports.products = schema_1.dataSchema.table('lttstore_products', {
     // ID of the product
     id: (0, pg_core_1.serial)('id').primaryKey().unique(),
     // ProductID as seen on the store itself (eg: 'onesie' or 'merino-t-shirt')
-    productId: (0, pg_core_1.varchar)('product_id', { length: 128 }).notNull().unique(),
+    productId: (0, pg_core_1.varchar)('product_id', {length: 128}).notNull().unique(),
     // Date imported (defaults to current time)
     importDate: (0, pg_core_1.timestamp)('import_date').defaultNow(),
     // Product name as seen on the store itself
@@ -26,7 +26,7 @@ exports.products = schema_1.dataSchema.table('lttstore_products', {
     standardPrice: (0, pg_core_1.real)('standard_price').notNull().default(0),
     salePrice: (0, pg_core_1.real)('sale_price').notNull().default(0),
     variantCount: (0, pg_core_1.integer)('variant_count').notNull().default(0),
-    type: (0, pg_core_1.varchar)('product_type', { length: 128 }).notNull().default(''),
+    type: (0, pg_core_1.varchar)('product_type', {length: 128}).notNull().default(''),
     retired: (0, pg_core_1.boolean)('retired').notNull().default(false),
     isOutOfStock: (0, pg_core_1.boolean)('is_out_of_stock').notNull().default(false),
     supersededBy: (0, pg_core_1.varchar)('superseded_by', {length: 128}).notNull().default(''),
