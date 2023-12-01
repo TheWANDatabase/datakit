@@ -14,8 +14,8 @@ export declare const userSettings: import("drizzle-orm/pg-core").PgTableWithColu
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
-    displayName: import("drizzle-orm/pg-core").PgColumn<{
-      name: "full_name";
+    username: import("drizzle-orm/pg-core").PgColumn<{
+      name: "username";
       tableName: "users_settings";
       dataType: "string";
       columnType: "PgText";

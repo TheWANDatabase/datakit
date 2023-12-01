@@ -71,6 +71,7 @@ __exportStar(require("./topics/comments"), exports);
 /* ===================== */
 __exportStar(require("./users/accounts"), exports);
 __exportStar(require("./users/settings"), exports);
+__exportStar(require("./users/awards"), exports);
 /* ===================== */
 /* === Media Exports === */
 /* ===================== */

@@ -26,5 +26,6 @@ export * from "./topics/changes";
 export * from "./topics/comments";
 export * from "./users/accounts";
 export * from "./users/settings";
+export * from "./users/awards";
 export * from "./media";
 //# sourceMappingURL=index.d.ts.map

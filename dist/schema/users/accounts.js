@@ -391,7 +391,7 @@ class Permissions {
 exports.Permissions = Permissions;
 exports.accounts = schema_1.dataSchema.table('users_accounts', {
     id: (0, pg_core_1.serial)('id').primaryKey().unique(),
-    username: (0, pg_core_1.text)('username').unique(),
+    displayName: (0, pg_core_1.text)('display_name').unique(),
     avatar: (0, pg_core_1.uuid)('avatar').references(() => media_1.media.id),
     created: (0, pg_core_1.timestamp)('created').defaultNow(),
     lastSeen: (0, pg_core_1.timestamp)('last_seen'),

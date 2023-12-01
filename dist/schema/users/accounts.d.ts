@@ -375,8 +375,8 @@ export declare const accounts: import("drizzle-orm/pg-core").PgTableWithColumns<
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
-    username: import("drizzle-orm/pg-core").PgColumn<{
-      name: "username";
+    displayName: import("drizzle-orm/pg-core").PgColumn<{
+      name: "display_name";
       tableName: "users_accounts";
       dataType: "string";
       columnType: "PgText";

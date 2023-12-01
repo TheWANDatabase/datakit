@@ -481,7 +481,7 @@ export class Permissions {
 
 export const accounts = dataSchema.table('users_accounts', {
   id: serial('id').primaryKey().unique(),
-  username: text('username').unique(),
+  displayName: text('display_name').unique(),
   avatar: uuid('avatar').references(() => media.id),
   created: timestamp('created').defaultNow(),
   lastSeen: timestamp('last_seen'),

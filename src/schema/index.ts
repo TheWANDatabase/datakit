@@ -64,6 +64,7 @@ export * from "./topics/comments"
 /* ===================== */
 export * from "./users/accounts"
 export * from "./users/settings"
+export * from "./users/awards"
 
 /* ===================== */
 /* === Media Exports === */
