@@ -1,4 +1,4 @@
-import {integer, pgTable, serial, text, timestamp, varchar} from "drizzle-orm/pg-core";
+import {integer, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
 import {products} from "../lttstore/products";
 import {reply} from "./reply";
 import {relations} from "drizzle-orm";
@@ -6,7 +6,7 @@ import {episodes} from "../episodes/episodes";
 import {dataSchema} from "../schema";
 
 export const merchMessages = dataSchema.table('merch_messages_messages', {
-  id: serial('id').primaryKey().unique(),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
   productId: integer('product_id').references(() => products.id),
   episodeId: varchar('episode_id', {length: 12}).references(() => episodes.id),
   message: text('message'),

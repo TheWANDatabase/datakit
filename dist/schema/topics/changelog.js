@@ -7,7 +7,7 @@ const changes_1 = require("./changes");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.changelog = schema_1.dataSchema.table('topics_changelogs', {
-    topicId: (0, pg_core_1.integer)('topic_id').primaryKey().references(() => topics_1.topics.id),
+    topicId: (0, pg_core_1.uuid)('topic_id').primaryKey().references(() => topics_1.topics.id),
     started: (0, pg_core_1.timestamp)('started').defaultNow()
 });
 exports.changelogRelations = (0, drizzle_orm_1.relations)(exports.changelog, ({ one, many }) => ({

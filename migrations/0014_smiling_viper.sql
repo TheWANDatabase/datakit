@@ -1,1 +1,0 @@
-ALTER TABLE "data"."lttstore_variants" ALTER COLUMN "id" SET DATA TYPE bigint;

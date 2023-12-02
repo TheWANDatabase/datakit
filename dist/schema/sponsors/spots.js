@@ -7,9 +7,9 @@ const episodes_1 = require("../episodes/episodes");
 const campaigns_1 = require("./campaigns");
 const schema_1 = require("../schema");
 exports.sponsorSpot = schema_1.dataSchema.table('sponsors_spots', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
-    campaignId: (0, pg_core_1.integer)('campaign_id').references(() => campaigns_1.campaigns.id),
+    campaignId: (0, pg_core_1.uuid)('campaign_id').references(() => campaigns_1.campaigns.id),
 });
 exports.sponsorSpotRelations = (0, drizzle_orm_1.relations)(exports.sponsorSpot, ({ one }) => ({
     campaign: one(exports.sponsorSpot, {

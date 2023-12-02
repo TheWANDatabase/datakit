@@ -1,10 +1,10 @@
-import {integer, pgTable, serial, text, timestamp} from "drizzle-orm/pg-core";
+import {integer, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {merchMessages} from "./message";
 import {dataSchema} from "../schema";
 
 export const reply = dataSchema.table('merch_messages_reply', {
-  id: serial('id').primaryKey().unique(),
-  messageId: integer('message_id').references(() => merchMessages.id),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
+  messageId: uuid('message_id').references(() => merchMessages.id),
   message: text('message'),
   added: timestamp('added').defaultNow(),
   start: integer('start'),

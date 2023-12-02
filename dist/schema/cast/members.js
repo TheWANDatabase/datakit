@@ -7,7 +7,7 @@ const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.members = schema_1.dataSchema.table('cast_members', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique(),
     alias: (0, pg_core_1.text)('alias'),
     forename: (0, pg_core_1.text)('forename'),
     surname: (0, pg_core_1.text)('surname'),

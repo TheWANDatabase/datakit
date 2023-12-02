@@ -7,13 +7,13 @@ const companies_1 = require("../companies/companies");
 const spots_1 = require("./spots");
 const schema_1 = require("../schema");
 exports.campaigns = schema_1.dataSchema.table('sponsors_campaigns', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     name: (0, pg_core_1.text)('name'),
     message: (0, pg_core_1.text)('message'),
     url: (0, pg_core_1.text)('url'),
     added: (0, pg_core_1.timestamp)('added').defaultNow(),
     modified: (0, pg_core_1.timestamp)('modified').defaultNow(),
-    companyId: (0, pg_core_1.integer)('company').references(() => companies_1.companies.id),
+    companyId: (0, pg_core_1.uuid)('company').references(() => companies_1.companies.id),
     isDennis: (0, pg_core_1.boolean)('is_dennis'),
     start: (0, pg_core_1.timestamp)('start'),
     end: (0, pg_core_1.timestamp)('end'),

@@ -1,7 +1,7 @@
 import {members} from "./members";
 import {jobs} from "./jobs";
 
-import {integer, pgTable, serial, varchar} from "drizzle-orm/pg-core";
+import {serial, uuid, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {episodes} from "../episodes/episodes";
 import {dataSchema} from "../schema";
@@ -9,8 +9,8 @@ import {dataSchema} from "../schema";
 
 export const credits = dataSchema.table('cast_credits', {
   id: serial('id').primaryKey().unique(),
-  castId: integer('cast_id').references(() => members.id),
-  positionId: integer('position_id').references(() => jobs.id),
+  castId: uuid('cast_id').references(() => members.id),
+  positionId: uuid('position_id').references(() => jobs.id),
   episodeId: varchar('episode_id', {length: 12}).references(() => episodes.id),
 })
 

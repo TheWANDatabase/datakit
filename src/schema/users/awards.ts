@@ -1,11 +1,11 @@
-import {accounts} from "./accounts";
-import {index, integer, serial, text, timestamp} from "drizzle-orm/pg-core";
+import {index, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {dataSchema} from "../schema";
 import {relations} from "drizzle-orm";
+import {accounts} from "./accounts";
 
 export const awards = dataSchema.table('users_awards', {
-  id: serial('id').primaryKey().unique(),
-  uid: integer('uid').references(() => accounts.id),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
+  uid: uuid('uid'),//.references(() => accounts.id),
   award: text('award'),
   awardedAt: timestamp('awarded_at').defaultNow(),
 }, (table) => {

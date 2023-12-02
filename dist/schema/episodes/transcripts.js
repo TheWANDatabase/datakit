@@ -7,7 +7,7 @@ const episodes_1 = require("./episodes");
 const speakers_1 = require("./speakers");
 const schema_1 = require("../schema");
 exports.transcripts = schema_1.dataSchema.table('episodes_transcripts', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
     filename: (0, pg_core_1.text)('filename'),
     started: (0, pg_core_1.timestamp)('started'),

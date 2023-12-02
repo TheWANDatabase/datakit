@@ -7,11 +7,11 @@ const accounts_1 = require("../users/accounts");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.comments = schema_1.dataSchema.table('topics_comments', {
-    id: (0, pg_core_1.integer)('id').primaryKey(),
-    changeId: (0, pg_core_1.integer)('change_id').references(() => changes_1.changes.id),
+    id: (0, pg_core_1.uuid)('id').primaryKey().defaultRandom(),
+    changeId: (0, pg_core_1.uuid)('change_id').references(() => changes_1.changes.id),
     message: (0, pg_core_1.text)('message'),
     added: (0, pg_core_1.timestamp)('added').defaultNow(),
-    authorId: (0, pg_core_1.integer)('author').references(() => accounts_1.accounts.id),
+    authorId: (0, pg_core_1.uuid)('author').references(() => accounts_1.accounts.id),
 });
 exports.commentsRelations = (0, drizzle_orm_1.relations)(exports.comments, ({ one }) => ({
     change: one(changes_1.changes, {

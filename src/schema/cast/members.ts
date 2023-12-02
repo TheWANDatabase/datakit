@@ -1,12 +1,12 @@
 import {media} from "../media";
 import {jobs} from "./jobs";
 
-import {jsonb, pgTable, serial, text, uuid} from "drizzle-orm/pg-core";
+import {jsonb, text, uuid} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
 export const members = dataSchema.table('cast_members', {
-  id: serial('id').primaryKey().unique(),
+  id: uuid('id').primaryKey().unique(),
   alias: text('alias'),
   forename: text('forename'),
   surname: text('surname'),

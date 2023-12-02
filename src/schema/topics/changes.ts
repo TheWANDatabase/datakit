@@ -1,28 +1,28 @@
-import {integer, pgEnum, pgTable, serial, text, timestamp} from "drizzle-orm/pg-core";
+import {integer, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {changelog} from "./changelog";
 import {accounts} from "../users/accounts";
 import {comments} from "./comments";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
-export const changeStatus = pgEnum('change_status', [
-  'draft',
-  'proposed',
-  'accepted',
-  'rejected',
-  'rolled_back'
-]);
+export enum ChangeStatus {
+  draft,
+  proposed,
+  accepted,
+  rejected,
+  rolled_back
+};
 
 
 export const changes: any = dataSchema.table('topics_changes', {
-  id: serial('id').primaryKey().unique(),
-  changelogId: integer('changelog_id').references(() => changelog.topicId),
-  status: changeStatus('status').default('draft'),
+  id: uuid('id').primaryKey().unique(),
+  changelogId: uuid('changelog_id').references(() => changelog.topicId),
+  status: integer('status').default(ChangeStatus.draft),
   added: timestamp('added').defaultNow(),
   modified: timestamp('modified').defaultNow(),
-  authorId: integer('author').references(() => accounts.id),
+  authorId: uuid('author').references(() => accounts.id),
   title: text('title'),
-  parentId: integer('parent').references(() => changes.id),
+  parentId: uuid('parent').references(() => changes.id),
   start: integer('start'),
   end: integer('end'),
 });

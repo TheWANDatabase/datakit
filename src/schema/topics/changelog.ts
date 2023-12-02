@@ -1,11 +1,11 @@
-import {integer, pgTable, timestamp} from "drizzle-orm/pg-core";
+import {timestamp, uuid} from "drizzle-orm/pg-core";
 import {topics} from "./topics";
 import {changes} from "./changes";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
 export const changelog = dataSchema.table('topics_changelogs', {
-  topicId: integer('topic_id').primaryKey().references(() => topics.id),
+  topicId: uuid('topic_id').primaryKey().references(() => topics.id),
   started: timestamp('started').defaultNow()
 })
 

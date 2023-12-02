@@ -361,17 +361,21 @@ export declare class Permissions {
 
 export declare const accounts: import("drizzle-orm/pg-core").PgTableWithColumns<{
   name: "users_accounts";
-  schema: "data";
+  schema: "data"; /**
+   * ADD_CAST
+   * @description Allows the user to add a cast member to the archive.
+   * @see PermissionsEnum.PROPOSE_CAST
+   */
   columns: {
     id: import("drizzle-orm/pg-core").PgColumn<{
-      name: "id";
+      name: "uuid";
       tableName: "users_accounts";
-      dataType: "number";
-      columnType: "PgSerial";
-      data: number;
-      driverParam: number;
+      dataType: "string";
+      columnType: "PgUUID";
+      data: string;
+      driverParam: string;
       notNull: true;
-      hasDefault: true;
+      hasDefault: false;
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;

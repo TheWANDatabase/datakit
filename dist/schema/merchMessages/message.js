@@ -8,7 +8,7 @@ const drizzle_orm_1 = require("drizzle-orm");
 const episodes_1 = require("../episodes/episodes");
 const schema_1 = require("../schema");
 exports.merchMessages = schema_1.dataSchema.table('merch_messages_messages', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     productId: (0, pg_core_1.integer)('product_id').references(() => products_1.products.id),
     episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
     message: (0, pg_core_1.text)('message'),

@@ -1,17 +1,17 @@
-import {boolean, integer, serial, text, timestamp} from "drizzle-orm/pg-core";
+import {boolean, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {companies} from "../companies/companies";
 import {sponsorSpot} from "./spots";
 import {dataSchema} from "../schema";
 
 export const campaigns = dataSchema.table('sponsors_campaigns', {
-  id: serial('id').primaryKey().unique(),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
   name: text('name'),
   message: text('message'),
   url: text('url'),
   added: timestamp('added').defaultNow(),
   modified: timestamp('modified').defaultNow(),
-  companyId: integer('company').references(() => companies.id),
+  companyId: uuid('company').references(() => companies.id),
   isDennis: boolean('is_dennis'),
   start: timestamp('start'),
   end: timestamp('end'),

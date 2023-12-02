@@ -1,7 +1,8 @@
-import {bigint, serial, text, timestamp, uuid} from "drizzle-orm/pg-core";
+import {bigint, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {media} from "../media";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
+import {userSettings} from "./settings";
 
 /**
  * PermissionsEnum
@@ -480,7 +481,7 @@ export class Permissions {
 }
 
 export const accounts = dataSchema.table('users_accounts', {
-  id: serial('id').primaryKey().unique(),
+  id: uuid('uuid').primaryKey().unique().references(() => userSettings.uid),
   displayName: text('display_name').unique(),
   avatar: uuid('avatar').references(() => media.id),
   created: timestamp('created').defaultNow(),

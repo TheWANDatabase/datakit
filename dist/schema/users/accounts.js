@@ -5,6 +5,7 @@ const pg_core_1 = require("drizzle-orm/pg-core");
 const media_1 = require("../media");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
+const settings_1 = require("./settings");
 /**
  * PermissionsEnum
  * @enum {number}
@@ -390,7 +391,7 @@ class Permissions {
 
 exports.Permissions = Permissions;
 exports.accounts = schema_1.dataSchema.table('users_accounts', {
-    id: (0, pg_core_1.serial)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('uuid').primaryKey().unique().references(() => settings_1.userSettings.uid),
     displayName: (0, pg_core_1.text)('display_name').unique(),
     avatar: (0, pg_core_1.uuid)('avatar').references(() => media_1.media.id),
     created: (0, pg_core_1.timestamp)('created').defaultNow(),

@@ -3,14 +3,14 @@ export declare const userSettings: import("drizzle-orm/pg-core").PgTableWithColu
   schema: "data";
   columns: {
     uid: import("drizzle-orm/pg-core").PgColumn<{
-      name: "uid";
+      name: "uuid";
       tableName: "users_settings";
-      dataType: "number";
-      columnType: "PgInteger";
-      data: number;
-      driverParam: string | number;
+      dataType: "string";
+      columnType: "PgUUID";
+      data: string;
+      driverParam: string;
       notNull: true;
-      hasDefault: false;
+      hasDefault: true;
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
