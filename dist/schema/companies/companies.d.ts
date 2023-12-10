@@ -10,7 +10,7 @@ export declare const companies: import("drizzle-orm/pg-core").PgTableWithColumns
       data: string;
       driverParam: string;
       notNull: true;
-      hasDefault: false;
+      hasDefault: true;
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;

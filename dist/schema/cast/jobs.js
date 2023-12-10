@@ -7,7 +7,7 @@ const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.jobs = schema_1.dataSchema.table('cast_jobs', {
-    id: (0, pg_core_1.uuid)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     outletId: (0, pg_core_1.uuid)('outlet_id').references(() => companies_1.companies.id),
     role: (0, pg_core_1.text)('role'),
     isPrimary: (0, pg_core_1.boolean)('is_primary'),

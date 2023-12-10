@@ -10,7 +10,7 @@ export declare const members: import("drizzle-orm/pg-core").PgTableWithColumns<{
       data: string;
       driverParam: string;
       notNull: true;
-      hasDefault: false;
+      hasDefault: true;
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
@@ -83,6 +83,18 @@ export declare const members: import("drizzle-orm/pg-core").PgTableWithColumns<{
       driverParam: unknown;
       notNull: false;
       hasDefault: false;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    priority: import("drizzle-orm/pg-core").PgColumn<{
+      name: "priority";
+      tableName: "cast_members";
+      dataType: "number";
+      columnType: "PgSerial";
+      data: number;
+      driverParam: number;
+      notNull: true;
+      hasDefault: true;
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;

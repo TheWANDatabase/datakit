@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1701541817567,
+      "tag": "0000_calm_naoko",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1702177295056,
+      "tag": "0001_rich_preak",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1702181337445,
+      "tag": "0002_wild_omega_red",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1702181500365,
+      "tag": "0003_late_ink",
+      "breakpoints": true
+    }
+  ]
+}

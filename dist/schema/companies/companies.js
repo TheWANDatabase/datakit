@@ -7,7 +7,7 @@ const drizzle_orm_1 = require("drizzle-orm");
 const jobs_1 = require("../cast/jobs");
 const schema_1 = require("../schema");
 exports.companies = schema_1.dataSchema.table('companies', {
-    id: (0, pg_core_1.uuid)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     name: (0, pg_core_1.text)('name'),
     links: (0, pg_core_1.jsonb)('links').default([]),
     logo: (0, pg_core_1.uuid)('logo').unique().references(() => media_1.media.id),

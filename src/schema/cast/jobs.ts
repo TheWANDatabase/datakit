@@ -6,7 +6,7 @@ import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
 export const jobs = dataSchema.table('cast_jobs', {
-  id: uuid('id').primaryKey().unique(),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
   outletId: uuid('outlet_id').references(() => companies.id),
   role: text('role'),
   isPrimary: boolean('is_primary'),

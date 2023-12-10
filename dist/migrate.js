@@ -9,18 +9,18 @@ async function wrapExec(command, args) {
     });
 }
 async function runMigrations() {
-    console.log("Generating migrations...");
-    let migrationsResults = {
-        data: null,
-        management: null,
-    };
-    console.log("> Generating data schema...");
-    migrationsResults.data = await wrapExec('npx', [
-        "drizzle-kit",
-        "generate:pg",
-        "--schema=./src/schema",
-        "--out=./migrations"
-    ]);
+    // console.log("Generating migrations...")
+    // let migrationsResults: any = {
+    //   data: null,
+    //   management: null,
+    // }
+    // console.log("> Generating data schema...")
+    // migrationsResults.data = await wrapExec('npx', [
+    //   "drizzle-kit",
+    //   "generate:pg",
+    //   "--schema=./src/schema",
+    //   "--out=./migrations"
+    // ]);
     console.log("Running migrations...");
     let client = new client_1.Client();
     console.log("> Running data schema migrations...");

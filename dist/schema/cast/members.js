@@ -7,13 +7,14 @@ const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.members = schema_1.dataSchema.table('cast_members', {
-    id: (0, pg_core_1.uuid)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     alias: (0, pg_core_1.text)('alias'),
     forename: (0, pg_core_1.text)('forename'),
     surname: (0, pg_core_1.text)('surname'),
     debut: (0, pg_core_1.text)('debut_id'),
     avatar: (0, pg_core_1.uuid)('avatar_id').unique().references(() => media_1.media.id),
     socials: (0, pg_core_1.jsonb)('socials').$type(),
+    priority: (0, pg_core_1.serial)('priority').unique()
 });
 exports.castRelations = (0, drizzle_orm_1.relations)(exports.members, ({ one, many }) => ({
     positions: many(jobs_1.jobs),
