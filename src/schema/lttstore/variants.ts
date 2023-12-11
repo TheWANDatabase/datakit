@@ -16,7 +16,9 @@ export const variants = dataSchema.table('lttstore_variants', {
   image: uuid('image').references(() => media.id),
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
-  lastUpdated: timestamp('last_updated').notNull().defaultNow()
+  lastUpdated: timestamp('last_updated').notNull().defaultNow(),
+  imageCount: bigint('image_count', {mode: "number"}).notNull().default(0),
+  featureCount: bigint('feature_count', {mode: "number"}).notNull().default(0) // The number of episodes this variant is featured in
 })
 
 const variantsRelations = relations(variants, ({one}) => ({

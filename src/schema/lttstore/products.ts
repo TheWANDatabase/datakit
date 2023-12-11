@@ -1,4 +1,4 @@
-import {boolean, integer, real, serial, text, timestamp, varchar} from "drizzle-orm/pg-core";
+import {bigint, boolean, real, serial, text, timestamp, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
 
@@ -27,11 +27,13 @@ export const products = dataSchema.table('lttstore_products', {
   isOnSale: boolean('is_on_sale').notNull().default(false),
   standardPrice: real('standard_price').notNull().default(0),
   salePrice: real('sale_price').notNull().default(0),
-  variantCount: integer('variant_count').notNull().default(0),
+  variantCount: bigint('variant_count', {mode: "number"}).notNull().default(0),
   type: varchar('product_type', {length: 128}).notNull().default(''),
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
   supersededBy: varchar('superseded_by', {length: 128}).notNull().default(''),
+  imageCount: bigint('image_count', {mode: "number"}).notNull().default(0),
+  featureCount: bigint('feature_count', {mode: "number"}).notNull().default(0) // The number of episodes this product is featured in
 })
 
 export const productsRelations = relations(products, ({one, many}) => ({

@@ -1,7 +1,7 @@
 import {credits} from "../cast/credits";
 import {productLinker} from "../lttstore/productLinker";
 
-import {index, integer, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
+import {bigint, index, integer, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {sponsorSpot} from "../sponsors/spots";
 import {topics} from "../topics/topics";
@@ -17,6 +17,10 @@ export const episodes = dataSchema.table('episodes', {
   thumbnail: uuid('thumbnail').unique().references(() => media.id),
   aired: timestamp('aired').defaultNow(),
   duration: integer('duration'),
+  topicCount: bigint('topic_count', {mode: "number"}).notNull().default(0),
+  hostCount: bigint('host_count', {mode: "number"}).notNull().default(0),
+  sponsorCount: bigint('host_count', {mode: "number"}).notNull().default(0),
+  merchMessageCount: bigint('host_count', {mode: "number"}).notNull().default(0),
 }, (table) => {
   return {
     airedIdx: index('aired_idx').on(table.aired).desc(),

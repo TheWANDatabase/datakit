@@ -9,9 +9,9 @@ const products_1 = require("./products");
 const schema_1 = require("../schema");
 exports.productImage = schema_1.dataSchema.table('lttstore_product_images', {
     id: (0, pg_core_1.serial)('id').primaryKey().unique(),
-    productId: (0, pg_core_1.serial)('product_id').references(() => products_1.products.id),
+    productId: (0, pg_core_1.integer)('product_id').references(() => products_1.products.id),
     imageId: (0, pg_core_1.uuid)('image_id').unique().notNull().references(() => media_1.media.id),
-    modelId: (0, pg_core_1.serial)('model_id').references(() => models_1.models.id),
+    modelId: (0, pg_core_1.integer)('model_id').references(() => models_1.models.id),
     size: (0, pg_core_1.text)('size'),
 });
 exports.productImageRelations = (0, drizzle_orm_1.relations)(exports.productImage, ({ one }) => ({

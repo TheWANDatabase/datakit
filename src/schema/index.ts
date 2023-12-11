@@ -48,7 +48,6 @@ export * from "./merchMessages/reply"
 /* ===================== */
 /* == Sponsor Exports == */
 /* ===================== */
-export * from "./sponsors/campaigns"
 export * from "./sponsors/spots"
 
 /* ===================== */

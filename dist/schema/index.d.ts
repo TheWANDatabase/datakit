@@ -18,7 +18,6 @@ export * from "./management/logs";
 export * from "./management/lateness";
 export * from "./merchMessages/message";
 export * from "./merchMessages/reply";
-export * from "./sponsors/campaigns";
 export * from "./sponsors/spots";
 export * from "./topics/topics";
 export * from "./topics/changelog";

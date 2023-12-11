@@ -1,4 +1,4 @@
-import {integer, text, timestamp, uuid} from "drizzle-orm/pg-core";
+import {bigint, integer, text, timestamp, uuid} from "drizzle-orm/pg-core";
 import {changelog} from "./changelog";
 import {accounts} from "../users/accounts";
 import {comments} from "./comments";
@@ -25,6 +25,7 @@ export const changes: any = dataSchema.table('topics_changes', {
   parentId: uuid('parent').references(() => changes.id),
   start: integer('start'),
   end: integer('end'),
+  commentCount: bigint('comment_count', {mode: "number"}).notNull().default(0)
 });
 
 const changesRelations = relations(changes, ({one, many}) => ({

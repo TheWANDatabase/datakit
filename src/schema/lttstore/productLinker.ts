@@ -1,20 +1,23 @@
 import {episodes} from "../episodes/episodes";
 import {products} from "./products";
 
-import {integer, pgTable, serial, varchar} from "drizzle-orm/pg-core";
+import {bigint, boolean, serial, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
+import {variants} from "./variants";
 
 export const productLinker = dataSchema.table('lttstore_product_linker', {
   id: serial('id').primaryKey().unique(),
-  productId: integer("product_id").references(() => products.id),
+  variantId: bigint("variant_id", {mode: "number"}).references(() => variants.id),
   episodeId: varchar("episode_id", {length: 12}).references(() => episodes.id),
+  isLaunch: boolean('is_launch').notNull().default(false)
 })
 
 export const productLinkerRelations = relations(productLinker, ({one}) => ({
   product: one(products, {
-    fields: [productLinker.productId],
-    references: [products.id]
+    fields: [productLinker.variantId],
+    // @ts-ignore
+    references: [variants.id]
   }),
   episode: one(episodes, {
     fields: [productLinker.episodeId],

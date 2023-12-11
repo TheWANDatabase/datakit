@@ -57,7 +57,6 @@ __exportStar(require("./merchMessages/reply"), exports);
 /* ===================== */
 /* == Sponsor Exports == */
 /* ===================== */
-__exportStar(require("./sponsors/campaigns"), exports);
 __exportStar(require("./sponsors/spots"), exports);
 /* ===================== */
 /* === Topic Exports === */

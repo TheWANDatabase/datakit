@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 exports.changes = exports.ChangeStatus = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const changelog_1 = require("./changelog");
@@ -27,8 +27,9 @@ exports.changes = schema_1.dataSchema.table('topics_changes', {
     parentId: (0, pg_core_1.uuid)('parent').references(() => exports.changes.id),
     start: (0, pg_core_1.integer)('start'),
     end: (0, pg_core_1.integer)('end'),
+    commentCount: (0, pg_core_1.bigint)('comment_count', {mode: "number"}).notNull().default(0)
 });
-const changesRelations = (0, drizzle_orm_1.relations)(exports.changes, ({ one, many }) => ({
+const changesRelations = (0, drizzle_orm_1.relations)(exports.changes, ({one, many}) => ({
     changelog: one(changelog_1.changelog, {
         fields: [exports.changes.changelogId],
         references: [changelog_1.changelog.topicId]

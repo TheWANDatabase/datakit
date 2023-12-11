@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 exports.castRelations = exports.members = void 0;
 const media_1 = require("../media");
 const jobs_1 = require("./jobs");
@@ -14,9 +14,11 @@ exports.members = schema_1.dataSchema.table('cast_members', {
     debut: (0, pg_core_1.text)('debut_id'),
     avatar: (0, pg_core_1.uuid)('avatar_id').unique().references(() => media_1.media.id),
     socials: (0, pg_core_1.jsonb)('socials').$type(),
-    priority: (0, pg_core_1.serial)('priority').unique()
+    priority: (0, pg_core_1.integer)('priority').unique(),
+    creditCount: (0, pg_core_1.bigint)('credit_count', {mode: "number"}).notNull().default(0), // The number of episodes this person is featured in
+    positionCount: (0, pg_core_1.bigint)('position_count', {mode: "number"}).notNull().default(0), // The number of positions that we know the person has had
 });
-exports.castRelations = (0, drizzle_orm_1.relations)(exports.members, ({ one, many }) => ({
+exports.castRelations = (0, drizzle_orm_1.relations)(exports.members, ({one, many}) => ({
     positions: many(jobs_1.jobs),
     avatar: one(media_1.media, {
         fields: [exports.members.avatar],

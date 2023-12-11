@@ -90,9 +90,33 @@ export declare const members: import("drizzle-orm/pg-core").PgTableWithColumns<{
       name: "priority";
       tableName: "cast_members";
       dataType: "number";
-      columnType: "PgSerial";
+      columnType: "PgInteger";
       data: number;
-      driverParam: number;
+      driverParam: string | number;
+      notNull: false;
+      hasDefault: false;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    creditCount: import("drizzle-orm/pg-core").PgColumn<{
+      name: "credit_count";
+      tableName: "cast_members";
+      dataType: "number";
+      columnType: "PgBigInt53";
+      data: number;
+      driverParam: string | number;
+      notNull: true;
+      hasDefault: true;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    positionCount: import("drizzle-orm/pg-core").PgColumn<{
+      name: "position_count";
+      tableName: "cast_members";
+      dataType: "number";
+      columnType: "PgBigInt53";
+      data: number;
+      driverParam: string | number;
       notNull: true;
       hasDefault: true;
       enumValues: undefined;
