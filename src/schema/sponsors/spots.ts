@@ -6,7 +6,6 @@ import {companies} from "../companies/companies";
 
 export const sponsorSpot = dataSchema.table('sponsors_spots', {
   id: uuid('id').primaryKey().unique().defaultRandom(),
-  name: text('name'),
   message: text('message'),
   url: text('url'),
   added: timestamp('added').defaultNow(),
