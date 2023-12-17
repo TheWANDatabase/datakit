@@ -8,7 +8,6 @@ const schema_1 = require("../schema");
 const companies_1 = require("../companies/companies");
 exports.sponsorSpot = schema_1.dataSchema.table('sponsors_spots', {
     id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
-    name: (0, pg_core_1.text)('name'),
     message: (0, pg_core_1.text)('message'),
     url: (0, pg_core_1.text)('url'),
     added: (0, pg_core_1.timestamp)('added').defaultNow(),

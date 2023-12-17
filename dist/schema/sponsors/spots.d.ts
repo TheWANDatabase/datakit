@@ -14,18 +14,6 @@ export declare const sponsorSpot: import("drizzle-orm/pg-core").PgTableWithColum
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
-    name: import("drizzle-orm/pg-core").PgColumn<{
-      name: "name";
-      tableName: "sponsors_spots";
-      dataType: "string";
-      columnType: "PgText";
-      data: string;
-      driverParam: string;
-      notNull: false;
-      hasDefault: false;
-      enumValues: [string, ...string[]];
-      baseColumn: never;
-    }, {}, {}>;
     message: import("drizzle-orm/pg-core").PgColumn<{
       name: "message";
       tableName: "sponsors_spots";
