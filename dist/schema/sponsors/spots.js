@@ -14,8 +14,8 @@ exports.sponsorSpot = schema_1.dataSchema.table('sponsors_spots', {
     modified: (0, pg_core_1.timestamp)('modified').defaultNow(),
     companyId: (0, pg_core_1.uuid)('company').references(() => companies_1.companies.id),
     isDennis: (0, pg_core_1.boolean)('is_dennis'),
-    start: (0, pg_core_1.timestamp)('start'),
-    end: (0, pg_core_1.timestamp)('end'),
+    start: (0, pg_core_1.integer)('start'),
+    end: (0, pg_core_1.integer)('end'),
     safe: (0, pg_core_1.boolean)('safe'), // Set true by default, but can be set to false if the sponsor company was dropped for ethical reasons
     episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
     isSponsorDebut: (0, pg_core_1.boolean)('is_sponsor_debut').notNull().default(false)

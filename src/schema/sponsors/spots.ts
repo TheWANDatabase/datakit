@@ -1,4 +1,4 @@
-import {boolean, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
+import {boolean, integer, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
 import {episodes} from "../episodes/episodes";
 import {dataSchema} from "../schema";
@@ -12,8 +12,8 @@ export const sponsorSpot = dataSchema.table('sponsors_spots', {
   modified: timestamp('modified').defaultNow(),
   companyId: uuid('company').references(() => companies.id),
   isDennis: boolean('is_dennis'),
-  start: timestamp('start'),
-  end: timestamp('end'),
+  start: integer('start'),
+  end: integer('end'),
   safe: boolean('safe'), // Set true by default, but can be set to false if the sponsor company was dropped for ethical reasons
   episodeId: varchar('episode_id', {length: 12}).references(() => episodes.id),
   isSponsorDebut: boolean('is_sponsor_debut').notNull().default(false)

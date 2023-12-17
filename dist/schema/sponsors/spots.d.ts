@@ -89,10 +89,10 @@ export declare const sponsorSpot: import("drizzle-orm/pg-core").PgTableWithColum
     start: import("drizzle-orm/pg-core").PgColumn<{
       name: "start";
       tableName: "sponsors_spots";
-      dataType: "date";
-      columnType: "PgTimestamp";
-      data: Date;
-      driverParam: string;
+      dataType: "number";
+      columnType: "PgInteger";
+      data: number;
+      driverParam: string | number;
       notNull: false;
       hasDefault: false;
       enumValues: undefined;
@@ -101,10 +101,10 @@ export declare const sponsorSpot: import("drizzle-orm/pg-core").PgTableWithColum
     end: import("drizzle-orm/pg-core").PgColumn<{
       name: "end";
       tableName: "sponsors_spots";
-      dataType: "date";
-      columnType: "PgTimestamp";
-      data: Date;
-      driverParam: string;
+      dataType: "number";
+      columnType: "PgInteger";
+      data: number;
+      driverParam: string | number;
       notNull: false;
       hasDefault: false;
       enumValues: undefined;

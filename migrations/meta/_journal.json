@@ -64,6 +64,13 @@
       "when": 1702833982830,
       "tag": "0008_ordinary_bullseye",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1702835736681,
+      "tag": "0009_fast_goliath",
+      "breakpoints": true
     }
   ]
 }
