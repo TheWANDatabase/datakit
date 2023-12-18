@@ -134,6 +134,42 @@ export declare const episodes: import("drizzle-orm/pg-core").PgTableWithColumns<
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
+    introStart: import("drizzle-orm/pg-core").PgColumn<{
+      name: "intro_start";
+      tableName: "episodes";
+      dataType: "number";
+      columnType: "PgInteger";
+      data: number;
+      driverParam: string | number;
+      notNull: false;
+      hasDefault: false;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    introDuration: import("drizzle-orm/pg-core").PgColumn<{
+      name: "intro_duration";
+      tableName: "episodes";
+      dataType: "number";
+      columnType: "PgInteger";
+      data: number;
+      driverParam: string | number;
+      notNull: false;
+      hasDefault: false;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    preShowOffset: import("drizzle-orm/pg-core").PgColumn<{
+      name: "pre_show_offset";
+      tableName: "episodes";
+      dataType: "number";
+      columnType: "PgInteger";
+      data: number;
+      driverParam: string | number;
+      notNull: false;
+      hasDefault: true;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
   };
   dialect: "pg";
 }>;

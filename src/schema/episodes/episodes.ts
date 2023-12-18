@@ -21,6 +21,9 @@ export const episodes = dataSchema.table('episodes', {
   hostCount: bigint('host_count', {mode: "number"}).notNull().default(0),
   sponsorCount: bigint('host_count', {mode: "number"}).notNull().default(0),
   merchMessageCount: bigint('host_count', {mode: "number"}).notNull().default(0),
+  introStart: integer('intro_start'),
+  introDuration: integer('intro_duration'),
+  preShowOffset: integer('pre_show_offset').default(0)
 }, (table) => {
   return {
     airedIdx: index('aired_idx').on(table.aired).desc(),

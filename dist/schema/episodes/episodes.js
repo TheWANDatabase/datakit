@@ -22,6 +22,9 @@ exports.episodes = schema_1.dataSchema.table('episodes', {
     hostCount: (0, pg_core_1.bigint)('host_count', {mode: "number"}).notNull().default(0),
     sponsorCount: (0, pg_core_1.bigint)('host_count', {mode: "number"}).notNull().default(0),
     merchMessageCount: (0, pg_core_1.bigint)('host_count', {mode: "number"}).notNull().default(0),
+    introStart: (0, pg_core_1.integer)('intro_start'),
+    introDuration: (0, pg_core_1.integer)('intro_duration'),
+    preShowOffset: (0, pg_core_1.integer)('pre_show_offset').default(0)
 }, (table) => {
     return {
         airedIdx: (0, pg_core_1.index)('aired_idx').on(table.aired).desc(),

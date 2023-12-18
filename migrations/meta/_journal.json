@@ -78,6 +78,13 @@
       "when": 1702864753506,
       "tag": "0010_lame_mad_thinker",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1702870699480,
+      "tag": "0011_lumpy_black_widow",
+      "breakpoints": true
     }
   ]
 }
