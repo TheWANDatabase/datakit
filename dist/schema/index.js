@@ -26,6 +26,7 @@ __exportStar(require("./cast/jobs"), exports);
 /* == Company Exports == */
 /* ===================== */
 __exportStar(require("./companies/companies"), exports);
+__exportStar(require("./companies/sponsorMatching"), exports);
 /* ===================== */
 /* == Episode Exports == */
 /* ===================== */

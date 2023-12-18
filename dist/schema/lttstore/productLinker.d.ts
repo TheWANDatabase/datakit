@@ -54,7 +54,7 @@ export declare const productLinker: import("drizzle-orm/pg-core").PgTableWithCol
   dialect: "pg";
 }>;
 export declare const productLinkerRelations: import("drizzle-orm").Relations<"lttstore_product_linker", {
-  product: import("drizzle-orm").One<"lttstore_products", false>;
+  product: import("drizzle-orm").One<"lttstore_variants", false>;
   episode: import("drizzle-orm").One<"episodes", false>;
 }>;
 //# sourceMappingURL=productLinker.d.ts.map

@@ -2,6 +2,7 @@ export * from "./cast/credits";
 export * from "./cast/members";
 export * from "./cast/jobs";
 export * from "./companies/companies";
+export * from "./companies/sponsorMatching";
 export * from "./episodes/episodes";
 export * from "./episodes/transcripts";
 export * from "./episodes/speakers";

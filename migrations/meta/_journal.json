@@ -71,6 +71,13 @@
       "when": 1702835736681,
       "tag": "0009_fast_goliath",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1702864753506,
+      "tag": "0010_lame_mad_thinker",
+      "breakpoints": true
     }
   ]
 }

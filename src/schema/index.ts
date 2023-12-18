@@ -12,6 +12,7 @@ export * from "./cast/jobs"
 /* == Company Exports == */
 /* ===================== */
 export * from "./companies/companies"
+export * from "./companies/sponsorMatching"
 
 /* ===================== */
 /* == Episode Exports == */

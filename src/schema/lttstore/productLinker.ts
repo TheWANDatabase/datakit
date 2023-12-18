@@ -1,5 +1,4 @@
 import {episodes} from "../episodes/episodes";
-import {products} from "./products";
 
 import {bigint, boolean, serial, varchar} from "drizzle-orm/pg-core";
 import {relations} from "drizzle-orm";
@@ -14,9 +13,8 @@ export const productLinker = dataSchema.table('lttstore_product_linker', {
 })
 
 export const productLinkerRelations = relations(productLinker, ({one}) => ({
-  product: one(products, {
+  product: one(variants, {
     fields: [productLinker.variantId],
-    // @ts-ignore
     references: [variants.id]
   }),
   episode: one(episodes, {
