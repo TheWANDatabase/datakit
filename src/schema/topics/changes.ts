@@ -15,7 +15,7 @@ export enum ChangeStatus {
 
 
 export const changes: any = dataSchema.table('topics_changes', {
-  id: uuid('id').primaryKey().unique(),
+  id: uuid('id').primaryKey().unique().defaultRandom(),
   changelogId: uuid('changelog_id').references(() => changelog.topicId),
   status: integer('status').default(ChangeStatus.draft),
   added: timestamp('added').defaultNow(),

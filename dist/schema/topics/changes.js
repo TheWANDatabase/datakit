@@ -17,7 +17,7 @@ var ChangeStatus;
 })(ChangeStatus || (exports.ChangeStatus = ChangeStatus = {}));
 ;
 exports.changes = schema_1.dataSchema.table('topics_changes', {
-    id: (0, pg_core_1.uuid)('id').primaryKey().unique(),
+    id: (0, pg_core_1.uuid)('id').primaryKey().unique().defaultRandom(),
     changelogId: (0, pg_core_1.uuid)('changelog_id').references(() => changelog_1.changelog.topicId),
     status: (0, pg_core_1.integer)('status').default(ChangeStatus.draft),
     added: (0, pg_core_1.timestamp)('added').defaultNow(),
