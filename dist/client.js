@@ -33,12 +33,6 @@ const node_postgres_1 = require("drizzle-orm/node-postgres");
 const migrator_1 = require("drizzle-orm/node-postgres/migrator");
 require("dotenv/config");
 exports.dataSchema = __importStar(require("./schema"));
-const defaultConfig = {
-    // ssl: {
-    //   rejectUnauthorized: false,
-    // },
-    maxConnections: 5,
-};
 var ConType;
 (function (ConType) {
     ConType[ConType["SINGLE"] = 0] = "SINGLE";
@@ -53,15 +47,14 @@ class Client {
         switch (ct) {
             // The user has either chosen, or defaulted to using a single connection only.
             case ConType.SINGLE:
-                this.dataPool = new pg_1.Client({
+                this.dataPool = new pg_1.Pool({
                     connectionString: process.env.DATABASE_URL,
-                    ...defaultConfig,
+                    max: 1
                 });
                 break;
             case ConType.POOL:
                 this.dataPool = new pg_1.Pool({
                     connectionString: process.env.DATABASE_URL,
-                    ...defaultConfig,
                     max: mc
                 });
         }
