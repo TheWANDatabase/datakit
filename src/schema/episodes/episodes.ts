@@ -19,8 +19,8 @@ export const episodes = dataSchema.table('episodes', {
   duration: integer('duration'),
   topicCount: bigint('topic_count', {mode: "number"}).notNull().default(0),
   hostCount: bigint('host_count', {mode: "number"}).notNull().default(0),
-  sponsorCount: bigint('host_count', {mode: "number"}).notNull().default(0),
-  merchMessageCount: bigint('host_count', {mode: "number"}).notNull().default(0),
+  sponsorCount: bigint('sponsor_count', {mode: "number"}).notNull().default(0),
+  merchMessageCount: bigint('merch_message_count', {mode: "number"}).notNull().default(0),
   introStart: integer('intro_start'),
   introDuration: integer('intro_duration'),
   preShowOffset: integer('pre_show_offset').default(0)

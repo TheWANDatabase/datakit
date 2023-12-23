@@ -111,7 +111,7 @@ export declare const episodes: import("drizzle-orm/pg-core").PgTableWithColumns<
       baseColumn: never;
     }, {}, {}>;
     sponsorCount: import("drizzle-orm/pg-core").PgColumn<{
-      name: "host_count";
+      name: "sponsor_count";
       tableName: "episodes";
       dataType: "number";
       columnType: "PgBigInt53";
@@ -123,7 +123,7 @@ export declare const episodes: import("drizzle-orm/pg-core").PgTableWithColumns<
       baseColumn: never;
     }, {}, {}>;
     merchMessageCount: import("drizzle-orm/pg-core").PgColumn<{
-      name: "host_count";
+      name: "merch_message_count";
       tableName: "episodes";
       dataType: "number";
       columnType: "PgBigInt53";
