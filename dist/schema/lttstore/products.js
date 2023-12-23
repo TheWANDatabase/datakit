@@ -30,7 +30,6 @@ exports.products = schema_1.dataSchema.table('lttstore_products', {
     retired: (0, pg_core_1.boolean)('retired').notNull().default(false),
     isOutOfStock: (0, pg_core_1.boolean)('is_out_of_stock').notNull().default(false),
     supersededBy: (0, pg_core_1.varchar)('superseded_by', {length: 128}).notNull().default(''),
-    imageCount: (0, pg_core_1.bigint)('image_count', {mode: "number"}).notNull().default(0),
     featureCount: (0, pg_core_1.bigint)('feature_count', {mode: "number"}).notNull().default(0) // The number of episodes this product is featured in
 });
 exports.productsRelations = (0, drizzle_orm_1.relations)(exports.products, ({one, many}) => ({

@@ -155,18 +155,6 @@ export declare const products: import("drizzle-orm/pg-core").PgTableWithColumns<
       enumValues: [string, ...string[]];
       baseColumn: never;
     }, {}, {}>;
-    imageCount: import("drizzle-orm/pg-core").PgColumn<{
-      name: "image_count";
-      tableName: "lttstore_products";
-      dataType: "number";
-      columnType: "PgBigInt53";
-      data: number;
-      driverParam: string | number;
-      notNull: true;
-      hasDefault: true;
-      enumValues: undefined;
-      baseColumn: never;
-    }, {}, {}>;
     featureCount: import("drizzle-orm/pg-core").PgColumn<{
       name: "feature_count";
       tableName: "lttstore_products";
