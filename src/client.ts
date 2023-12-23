@@ -33,7 +33,7 @@ export class Client {
         });
     }
 
-    this.data = drizzle(this.dataPool);
+    this.data = drizzle(this.dataPool, {logger: process.env.DRIZZLEDBG === 'TRUE'});
   }
 
   async migrate(migrationsFolder: string) {

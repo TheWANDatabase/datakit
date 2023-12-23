@@ -58,7 +58,7 @@ class Client {
                     max: mc
                 });
         }
-        this.data = (0, node_postgres_1.drizzle)(this.dataPool);
+        this.data = (0, node_postgres_1.drizzle)(this.dataPool, {logger: process.env.DRIZZLEDBG === 'TRUE'});
     }
 
     async migrate(migrationsFolder) {
