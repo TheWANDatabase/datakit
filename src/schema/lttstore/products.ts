@@ -32,7 +32,6 @@ export const products = dataSchema.table('lttstore_products', {
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
   supersededBy: varchar('superseded_by', {length: 128}).notNull().default(''),
-  imageCount: bigint('image_count', {mode: "number"}).notNull().default(0),
   featureCount: bigint('feature_count', {mode: "number"}).notNull().default(0) // The number of episodes this product is featured in
 })
 
