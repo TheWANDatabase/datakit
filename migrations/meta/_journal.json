@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1703547490198,
+      "tag": "0000_steep_bloodstorm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1703824009258,
+      "tag": "0001_loving_tusk",
+      "breakpoints": true
+    }
+  ]
+}

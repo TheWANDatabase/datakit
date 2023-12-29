@@ -21,6 +21,7 @@ export const products = dataSchema.table('lttstore_products', {
 
   // Date imported (defaults to current time)
   importDate: timestamp('import_date').defaultNow(),
+  lastChecked: timestamp('last_checked').notNull().defaultNow(),
 
   // Product name as seen on the store itself
   title: text('title').notNull(),
