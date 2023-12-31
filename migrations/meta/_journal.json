@@ -15,6 +15,13 @@
       "when": 1703824009258,
       "tag": "0001_loving_tusk",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1704053727972,
+      "tag": "0002_chilly_dark_phoenix",
+      "breakpoints": true
     }
   ]
 }

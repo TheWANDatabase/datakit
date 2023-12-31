@@ -14,13 +14,25 @@ export declare const productLinker: import("drizzle-orm/pg-core").PgTableWithCol
       enumValues: undefined;
       baseColumn: never;
     }, {}, {}>;
-    variantId: import("drizzle-orm/pg-core").PgColumn<{
-      name: "variant_id";
+    productId: import("drizzle-orm/pg-core").PgColumn<{
+      name: "product_id";
       tableName: "lttstore_product_linker";
       dataType: "number";
-      columnType: "PgBigInt53";
+      columnType: "PgInteger";
       data: number;
       driverParam: string | number;
+      notNull: false;
+      hasDefault: false;
+      enumValues: undefined;
+      baseColumn: never;
+    }, {}, {}>;
+    variantId: import("drizzle-orm/pg-core").PgColumn<{
+      name: "variant_ids";
+      tableName: "lttstore_product_linker";
+      dataType: "json";
+      columnType: "PgJsonb";
+      data: string[];
+      driverParam: unknown;
       notNull: false;
       hasDefault: false;
       enumValues: undefined;
