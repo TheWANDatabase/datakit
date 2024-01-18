@@ -1,22 +1,18 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function (o, m, k, k2) {
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
     if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-        desc = {
-            enumerable: true, get: function () {
-                return m[k];
-            }
-        };
+      desc = { enumerable: true, get: function() { return m[k]; } };
     }
     Object.defineProperty(o, k2, desc);
-}) : (function (o, m, k, k2) {
+}) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function (o, v) {
-    Object.defineProperty(o, "default", {enumerable: true, value: v});
-}) : function (o, v) {
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
     o["default"] = v;
 });
 var __importStar = (this && this.__importStar) || function (mod) {
@@ -26,7 +22,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Client = exports.ConType = exports.dataSchema = void 0;
 const pg_1 = require("pg");
 const node_postgres_1 = require("drizzle-orm/node-postgres");
@@ -38,11 +34,9 @@ var ConType;
     ConType[ConType["SINGLE"] = 0] = "SINGLE";
     ConType[ConType["POOL"] = 1] = "POOL";
 })(ConType || (exports.ConType = ConType = {}));
-
 class Client {
     data;
     dataPool;
-
     constructor(ct = ConType.SINGLE, mc = 5) {
         switch (ct) {
             // The user has either chosen, or defaulted to using a single connection only.
@@ -58,14 +52,12 @@ class Client {
                     max: mc
                 });
         }
-        this.data = (0, node_postgres_1.drizzle)(this.dataPool, {logger: process.env.DRIZZLEDBG === 'TRUE'});
+        this.data = (0, node_postgres_1.drizzle)(this.dataPool, { logger: process.env.DRIZZLEDBG === 'TRUE' });
     }
-
     async migrate(migrationsFolder) {
         return (0, migrator_1.migrate)(this.data, {
             migrationsFolder: migrationsFolder
         });
     }
 }
-
 exports.Client = Client;

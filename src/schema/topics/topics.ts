@@ -1,7 +1,9 @@
-import {integer, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
+import {integer, pgEnum, text, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
 import {episodes} from "../episodes/episodes";
 import {relations} from "drizzle-orm";
 import {dataSchema} from "../schema";
+
+export const topicType = pgEnum('kind', ['topic', 'merch message', 'sponsor', 'tangent'])
 
 export const topics = dataSchema.table('topics', {
   id: uuid('id').primaryKey().unique().defaultRandom(),
@@ -11,6 +13,8 @@ export const topics = dataSchema.table('topics', {
   start: integer('start'),
   end: integer('end'),
   created: timestamp('created').defaultNow(),
+  ref: text('ref'),
+  kind: topicType('kind').default("topic"),
   modified: timestamp('modified').defaultNow(),
 })
 

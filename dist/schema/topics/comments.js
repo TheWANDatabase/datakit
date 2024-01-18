@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.commentsRelations = exports.comments = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const changes_1 = require("./changes");
@@ -13,7 +13,7 @@ exports.comments = schema_1.dataSchema.table('topics_comments', {
     added: (0, pg_core_1.timestamp)('added').defaultNow(),
     authorId: (0, pg_core_1.uuid)('author').references(() => accounts_1.accounts.id),
 });
-exports.commentsRelations = (0, drizzle_orm_1.relations)(exports.comments, ({one}) => ({
+exports.commentsRelations = (0, drizzle_orm_1.relations)(exports.comments, ({ one }) => ({
     change: one(changes_1.changes, {
         fields: [exports.comments.changeId],
         references: [changes_1.changes.id]

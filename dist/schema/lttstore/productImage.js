@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.productImageRelations = exports.productImage = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
@@ -14,7 +14,7 @@ exports.productImage = schema_1.dataSchema.table('lttstore_product_images', {
     modelId: (0, pg_core_1.integer)('model_id').references(() => models_1.models.id),
     size: (0, pg_core_1.text)('size'),
 });
-exports.productImageRelations = (0, drizzle_orm_1.relations)(exports.productImage, ({one}) => ({
+exports.productImageRelations = (0, drizzle_orm_1.relations)(exports.productImage, ({ one }) => ({
     product: one(exports.productImage, {
         fields: [exports.productImage.productId],
         references: [exports.productImage.id]

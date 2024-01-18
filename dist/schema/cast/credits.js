@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.creditsRelations = exports.credits = void 0;
 const members_1 = require("./members");
 const jobs_1 = require("./jobs");
@@ -11,9 +11,9 @@ exports.credits = schema_1.dataSchema.table('cast_credits', {
     id: (0, pg_core_1.serial)('id').primaryKey().unique(),
     castId: (0, pg_core_1.uuid)('cast_id').references(() => members_1.members.id),
     positionId: (0, pg_core_1.uuid)('position_id').references(() => jobs_1.jobs.id),
-    episodeId: (0, pg_core_1.varchar)('episode_id', {length: 12}).references(() => episodes_1.episodes.id),
+    episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
 });
-exports.creditsRelations = (0, drizzle_orm_1.relations)(exports.credits, ({one}) => ({
+exports.creditsRelations = (0, drizzle_orm_1.relations)(exports.credits, ({ one }) => ({
     castMember: one(members_1.members, {
         fields: [exports.credits.castId],
         references: [members_1.members.id]

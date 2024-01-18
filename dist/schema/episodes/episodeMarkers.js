@@ -1,12 +1,12 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.episodeMarkersRelations = exports.episodeMarkers = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const episodes_1 = require("./episodes");
 const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.episodeMarkers = schema_1.dataSchema.table('episodes_markers', {
-    id: (0, pg_core_1.varchar)('id', {length: 12}).unique().references(() => episodes_1.episodes.id),
+    id: (0, pg_core_1.varchar)('id', { length: 12 }).unique().references(() => episodes_1.episodes.id),
     thumb: (0, pg_core_1.boolean)('has_thumbnail').default(false),
     audioOnDemand: (0, pg_core_1.boolean)('has_audio_on_demand').default(false),
     videoOnDemand: (0, pg_core_1.boolean)('has_video_on_demand').default(false),
@@ -25,7 +25,7 @@ exports.episodeMarkers = schema_1.dataSchema.table('episodes_markers', {
         contentWarningIdx: (0, pg_core_1.index)('content_warning_idx').on(table.contentWarning).asc(),
     };
 });
-exports.episodeMarkersRelations = (0, drizzle_orm_1.relations)(exports.episodeMarkers, ({one}) => ({
+exports.episodeMarkersRelations = (0, drizzle_orm_1.relations)(exports.episodeMarkers, ({ one }) => ({
     episode: one(episodes_1.episodes, {
         fields: [exports.episodeMarkers.id],
         references: [episodes_1.episodes.id]

@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.sponsorsRelations = exports.sponsorMatching = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
@@ -13,7 +13,7 @@ exports.sponsorMatching = schema_1.dataSchema.table('companies_mappings', {
     priority: (0, pg_core_1.serial)('priority').unique(),
     company: (0, pg_core_1.uuid)('company').references(() => companies_1.companies.id)
 });
-exports.sponsorsRelations = (0, drizzle_orm_1.relations)(exports.sponsorMatching, ({one, many}) => ({
+exports.sponsorsRelations = (0, drizzle_orm_1.relations)(exports.sponsorMatching, ({ one, many }) => ({
     one: one(companies_1.companies, {
         fields: [exports.sponsorMatching.company],
         references: [companies_1.companies.id]

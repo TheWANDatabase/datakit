@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "9767d39e-bf77-4ab6-8d25-85067c4d3fa2",
-  "prevId": "d4ed51f7-4a48-4e31-8dde-4922f311e71d",
+  "id": "35246c02-9d49-43d7-a114-a4546d48ed07",
+  "prevId": "9767d39e-bf77-4ab6-8d25-85067c4d3fa2",
   "tables": {
     "cast_credits": {
       "name": "cast_credits",
@@ -2296,6 +2296,19 @@
           "notNull": false,
           "default": "now()"
         },
+        "ref": {
+          "name": "ref",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "kind": {
+          "name": "kind",
+          "type": "kind",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'topic'"
+        },
         "modified": {
           "name": "modified",
           "type": "timestamp",
@@ -2844,7 +2857,17 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "kind": {
+      "name": "kind",
+      "values": {
+        "topic": "topic",
+        "merch message": "merch message",
+        "sponsor": "sponsor",
+        "tangent": "tangent"
+      }
+    }
+  },
   "schemas": {
     "data": "data",
     "management": "management"

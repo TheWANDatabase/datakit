@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.awardsRelations = exports.awards = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const schema_1 = require("../schema");
@@ -16,7 +16,7 @@ exports.awards = schema_1.dataSchema.table('users_awards', {
         awardIdx: (0, pg_core_1.index)('award_idx').on(table.award).desc(),
     };
 });
-exports.awardsRelations = (0, drizzle_orm_1.relations)(exports.awards, ({one}) => ({
+exports.awardsRelations = (0, drizzle_orm_1.relations)(exports.awards, ({ one }) => ({
     account: one(accounts_1.accounts, {
         fields: [exports.awards.uid],
         references: [accounts_1.accounts.id]

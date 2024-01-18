@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.sponsorSpotRelations = exports.sponsorSpot = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
@@ -17,10 +17,10 @@ exports.sponsorSpot = schema_1.dataSchema.table('sponsors_spots', {
     start: (0, pg_core_1.integer)('start'),
     end: (0, pg_core_1.integer)('end'),
     safe: (0, pg_core_1.boolean)('safe'), // Set true by default, but can be set to false if the sponsor company was dropped for ethical reasons
-    episodeId: (0, pg_core_1.varchar)('episode_id', {length: 12}).references(() => episodes_1.episodes.id),
+    episodeId: (0, pg_core_1.varchar)('episode_id', { length: 12 }).references(() => episodes_1.episodes.id),
     isSponsorDebut: (0, pg_core_1.boolean)('is_sponsor_debut').notNull().default(false)
 });
-exports.sponsorSpotRelations = (0, drizzle_orm_1.relations)(exports.sponsorSpot, ({one}) => ({
+exports.sponsorSpotRelations = (0, drizzle_orm_1.relations)(exports.sponsorSpot, ({ one }) => ({
     episode: one(episodes_1.episodes, {
         fields: [exports.sponsorSpot.episodeId],
         references: [episodes_1.episodes.id]

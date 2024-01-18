@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.companiesRelations = exports.companies = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const media_1 = require("../media");
@@ -15,7 +15,7 @@ exports.companies = schema_1.dataSchema.table('companies', {
     added: (0, pg_core_1.timestamp)('added').defaultNow(),
     modified: (0, pg_core_1.timestamp)('modified').defaultNow(),
 });
-exports.companiesRelations = (0, drizzle_orm_1.relations)(exports.companies, ({one, many}) => ({
+exports.companiesRelations = (0, drizzle_orm_1.relations)(exports.companies, ({ one, many }) => ({
     jobs: many(jobs_1.jobs),
     one: one(media_1.media, {
         fields: [exports.companies.logo],

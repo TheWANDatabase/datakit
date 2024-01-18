@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.reply = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const message_1 = require("./message");

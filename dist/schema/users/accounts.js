@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.accountsRelations = exports.accounts = exports.Permissions = exports.PermissionsEnum = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const media_1 = require("../media");
@@ -348,47 +348,38 @@ var PermissionsEnum;
      */
     PermissionsEnum[PermissionsEnum["OWNER"] = -1] = "OWNER";
 })(PermissionsEnum || (exports.PermissionsEnum = PermissionsEnum = {}));
-
 class Permissions {
     permissions;
-
     constructor(permissions) {
         this.permissions = permissions;
     }
-
     get value() {
         return this.permissions;
     }
-
     set value(value) {
         this.permissions = value;
     }
-
     has(permission) {
         return (this.permissions & permission) === permission;
     }
-
     add(permission) {
         this.permissions |= permission;
     }
-
     remove(permission) {
         this.permissions &= ~permission;
     }
-
     set(permission, value) {
         if (value) {
             this.add(permission);
-        } else {
+        }
+        else {
             this.remove(permission);
         }
     }
-
     serialize() {
         return this.permissions;
     }
 }
-
 exports.Permissions = Permissions;
 exports.accounts = schema_1.dataSchema.table('users_accounts', {
     id: (0, pg_core_1.uuid)('uuid').primaryKey().unique().references(() => settings_1.userSettings.uid),
@@ -396,9 +387,9 @@ exports.accounts = schema_1.dataSchema.table('users_accounts', {
     avatar: (0, pg_core_1.uuid)('avatar').references(() => media_1.media.id),
     created: (0, pg_core_1.timestamp)('created').defaultNow(),
     lastSeen: (0, pg_core_1.timestamp)('last_seen'),
-    permissionInt: (0, pg_core_1.bigint)('permissions', {mode: "number"}).default(0),
+    permissionInt: (0, pg_core_1.bigint)('permissions', { mode: "number" }).default(0),
 });
-exports.accountsRelations = (0, drizzle_orm_1.relations)(exports.accounts, ({one}) => ({
+exports.accountsRelations = (0, drizzle_orm_1.relations)(exports.accounts, ({ one }) => ({
     avatar: one(media_1.media, {
         fields: [exports.accounts.avatar],
         references: [media_1.media.id]
