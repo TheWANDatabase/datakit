@@ -1,4 +1,4 @@
-export declare const topicType: import("drizzle-orm/pg-core").PgEnum<["topic", "merch message", "sponsor", "tangent"]>;
+export declare const topicType: import("drizzle-orm/pg-core").PgEnum<["topic", "merch message", "sponsor", "tangent", "sub topic"]>;
 export declare const topics: import("drizzle-orm/pg-core").PgTableWithColumns<{
     name: "topics";
     schema: "data";
@@ -104,11 +104,11 @@ export declare const topics: import("drizzle-orm/pg-core").PgTableWithColumns<{
             tableName: "topics";
             dataType: "string";
             columnType: "PgEnumColumn";
-            data: "topic" | "merch message" | "sponsor" | "tangent";
+            data: "topic" | "merch message" | "sponsor" | "tangent" | "sub topic";
             driverParam: string;
             notNull: false;
             hasDefault: true;
-            enumValues: ["topic", "merch message", "sponsor", "tangent"];
+            enumValues: ["topic", "merch message", "sponsor", "tangent", "sub topic"];
             baseColumn: never;
         }, {}, {}>;
         modified: import("drizzle-orm/pg-core").PgColumn<{

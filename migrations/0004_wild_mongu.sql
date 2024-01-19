@@ -1,0 +1,1 @@
+ALTER TYPE "kind" ADD VALUE 'sub topic';
