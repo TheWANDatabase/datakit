@@ -14,8 +14,8 @@ export declare const episodeMarkers: import("drizzle-orm/pg-core").PgTableWithCo
             enumValues: [string, ...string[]];
             baseColumn: never;
         }, {}, {}>;
-        thumb: import("drizzle-orm/pg-core").PgColumn<{
-            name: "has_thumbnail";
+        youtubeCaptions: import("drizzle-orm/pg-core").PgColumn<{
+            name: "youtube_captions";
             tableName: "episodes_markers";
             dataType: "boolean";
             columnType: "PgBoolean";
@@ -26,32 +26,8 @@ export declare const episodeMarkers: import("drizzle-orm/pg-core").PgTableWithCo
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
-        audioOnDemand: import("drizzle-orm/pg-core").PgColumn<{
-            name: "has_audio_on_demand";
-            tableName: "episodes_markers";
-            dataType: "boolean";
-            columnType: "PgBoolean";
-            data: boolean;
-            driverParam: boolean;
-            notNull: false;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
-        videoOnDemand: import("drizzle-orm/pg-core").PgColumn<{
-            name: "has_video_on_demand";
-            tableName: "episodes_markers";
-            dataType: "boolean";
-            columnType: "PgBoolean";
-            data: boolean;
-            driverParam: boolean;
-            notNull: false;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
-        webvtt: import("drizzle-orm/pg-core").PgColumn<{
-            name: "has_webvtt";
+        floatplaneCaptions: import("drizzle-orm/pg-core").PgColumn<{
+            name: "floatplane_captions";
             tableName: "episodes_markers";
             dataType: "boolean";
             columnType: "PgBoolean";

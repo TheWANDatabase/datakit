@@ -7,10 +7,8 @@ const drizzle_orm_1 = require("drizzle-orm");
 const schema_1 = require("../schema");
 exports.episodeMarkers = schema_1.dataSchema.table('episodes_markers', {
     id: (0, pg_core_1.varchar)('id', { length: 12 }).unique().references(() => episodes_1.episodes.id),
-    thumb: (0, pg_core_1.boolean)('has_thumbnail').default(false),
-    audioOnDemand: (0, pg_core_1.boolean)('has_audio_on_demand').default(false),
-    videoOnDemand: (0, pg_core_1.boolean)('has_video_on_demand').default(false),
-    webvtt: (0, pg_core_1.boolean)('has_webvtt').default(false),
+    youtubeCaptions: (0, pg_core_1.boolean)('youtube_captions').default(false),
+    floatplaneCaptions: (0, pg_core_1.boolean)('floatplane_captions').default(false),
     guest: (0, pg_core_1.boolean)('has_guest').default(false),
     live: (0, pg_core_1.boolean)('is_live').default(false),
     contentWarning: (0, pg_core_1.boolean)('has_content_warning').default(false),

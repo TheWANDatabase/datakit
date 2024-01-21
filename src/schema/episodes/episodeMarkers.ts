@@ -5,10 +5,8 @@ import {dataSchema} from "../schema";
 
 export const episodeMarkers = dataSchema.table('episodes_markers', {
   id: varchar('id', {length: 12}).unique().references(() => episodes.id),
-  thumb: boolean('has_thumbnail').default(false),
-  audioOnDemand: boolean('has_audio_on_demand').default(false),
-  videoOnDemand: boolean('has_video_on_demand').default(false),
-  webvtt: boolean('has_webvtt').default(false),
+  youtubeCaptions: boolean('youtube_captions').default(false),
+  floatplaneCaptions: boolean('floatplane_captions').default(false),
   guest: boolean('has_guest').default(false),
   live: boolean('is_live').default(false),
   contentWarning: boolean('has_content_warning').default(false),
