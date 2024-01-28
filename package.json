@@ -1,12 +1,11 @@
 {
   "name": "datakit",
-  "version": "0.0.12-alpha.15",
+  "version": "0.0.12-alpha.16",
   "description": "The database schema for the wan db",
   "main": "dist/main.js",
   "scripts": {
     "migrate": "tsc && npx drizzle-kit generate:pg --schema=./src/schema --out=./migrations && node dist/migrate.js",
-    "build": "tsc",
-    "prepublish": "npm run build"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
