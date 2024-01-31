@@ -18,18 +18,24 @@ exports.episodes = schema_1.dataSchema.table('episodes', {
     thumbnail: (0, pg_core_1.uuid)('thumbnail').unique().references(() => media_1.media.id),
     aired: (0, pg_core_1.timestamp)('aired').defaultNow(),
     duration: (0, pg_core_1.integer)('duration'),
-    topicCount: (0, pg_core_1.bigint)('topic_count', { mode: "number" }).notNull().default(0),
-    hostCount: (0, pg_core_1.bigint)('host_count', { mode: "number" }).notNull().default(0),
-    sponsorCount: (0, pg_core_1.bigint)('sponsor_count', { mode: "number" }).notNull().default(0),
-    merchMessageCount: (0, pg_core_1.bigint)('merch_message_count', { mode: "number" }).notNull().default(0),
     introStart: (0, pg_core_1.integer)('intro_start'),
     introDuration: (0, pg_core_1.integer)('intro_duration'),
-    preShowOffset: (0, pg_core_1.integer)('pre_show_offset').default(0)
+    preShowOffset: (0, pg_core_1.integer)('pre_show_offset').default(0),
+    youtubeCaptions: (0, pg_core_1.boolean)('youtube_captions').default(false),
+    floatplaneCaptions: (0, pg_core_1.boolean)('floatplane_captions').default(false),
+    guest: (0, pg_core_1.boolean)('has_guest').default(false),
+    live: (0, pg_core_1.boolean)('is_live').default(false),
+    contentWarning: (0, pg_core_1.boolean)('has_content_warning').default(false),
+    corrupt: (0, pg_core_1.boolean)('is_corrupt').default(false),
+    merchMessages: (0, pg_core_1.boolean)('has_merch_messages').default(false),
+    productLaunch: (0, pg_core_1.boolean)('has_product_launch').default(false),
 }, (table) => {
     return {
         airedIdx: (0, pg_core_1.index)('aired_idx').on(table.aired).desc(),
         durationIdx: (0, pg_core_1.index)('duration_idx').on(table.duration).desc(),
         titleIdx: (0, pg_core_1.index)('title_idx').on(table.title).desc(),
+        contentWarningIdx: (0, pg_core_1.index)('content_warning_idx').on(table.contentWarning).asc(),
+        corruptionWarningIdx: (0, pg_core_1.index)('corruption_warning_idx').on(table.corrupt).asc(),
     };
 });
 exports.episodesRelations = (0, drizzle_orm_1.relations)(exports.episodes, ({ one, many }) => ({

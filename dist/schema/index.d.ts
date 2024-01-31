@@ -7,6 +7,7 @@ export * from "./episodes/episodes";
 export * from "./episodes/transcripts";
 export * from "./episodes/speakers";
 export * from "./episodes/episodeMarkers";
+export * from "./episodes/events";
 export * from "./lttstore/products";
 export * from "./lttstore/productLinker";
 export * from "./lttstore/productImage";

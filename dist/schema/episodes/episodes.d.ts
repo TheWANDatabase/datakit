@@ -86,54 +86,6 @@ export declare const episodes: import("drizzle-orm/pg-core").PgTableWithColumns<
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
-        topicCount: import("drizzle-orm/pg-core").PgColumn<{
-            name: "topic_count";
-            tableName: "episodes";
-            dataType: "number";
-            columnType: "PgBigInt53";
-            data: number;
-            driverParam: string | number;
-            notNull: true;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
-        hostCount: import("drizzle-orm/pg-core").PgColumn<{
-            name: "host_count";
-            tableName: "episodes";
-            dataType: "number";
-            columnType: "PgBigInt53";
-            data: number;
-            driverParam: string | number;
-            notNull: true;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
-        sponsorCount: import("drizzle-orm/pg-core").PgColumn<{
-            name: "sponsor_count";
-            tableName: "episodes";
-            dataType: "number";
-            columnType: "PgBigInt53";
-            data: number;
-            driverParam: string | number;
-            notNull: true;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
-        merchMessageCount: import("drizzle-orm/pg-core").PgColumn<{
-            name: "merch_message_count";
-            tableName: "episodes";
-            dataType: "number";
-            columnType: "PgBigInt53";
-            data: number;
-            driverParam: string | number;
-            notNull: true;
-            hasDefault: true;
-            enumValues: undefined;
-            baseColumn: never;
-        }, {}, {}>;
         introStart: import("drizzle-orm/pg-core").PgColumn<{
             name: "intro_start";
             tableName: "episodes";
@@ -165,6 +117,102 @@ export declare const episodes: import("drizzle-orm/pg-core").PgTableWithColumns<
             columnType: "PgInteger";
             data: number;
             driverParam: string | number;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        youtubeCaptions: import("drizzle-orm/pg-core").PgColumn<{
+            name: "youtube_captions";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        floatplaneCaptions: import("drizzle-orm/pg-core").PgColumn<{
+            name: "floatplane_captions";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        guest: import("drizzle-orm/pg-core").PgColumn<{
+            name: "has_guest";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        live: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_live";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        contentWarning: import("drizzle-orm/pg-core").PgColumn<{
+            name: "has_content_warning";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        corrupt: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_corrupt";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        merchMessages: import("drizzle-orm/pg-core").PgColumn<{
+            name: "has_merch_messages";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: false;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        productLaunch: import("drizzle-orm/pg-core").PgColumn<{
+            name: "has_product_launch";
+            tableName: "episodes";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
             notNull: false;
             hasDefault: true;
             enumValues: undefined;

@@ -34,6 +34,7 @@ __exportStar(require("./episodes/episodes"), exports);
 __exportStar(require("./episodes/transcripts"), exports);
 __exportStar(require("./episodes/speakers"), exports);
 __exportStar(require("./episodes/episodeMarkers"), exports);
+__exportStar(require("./episodes/events"), exports);
 /* ====================== */
 /* == LTTStore Exports == */
 /* ====================== */
