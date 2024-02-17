@@ -146,6 +146,30 @@ export declare const variants: import("drizzle-orm/pg-core").PgTableWithColumns<
             enumValues: undefined;
             baseColumn: never;
         }, {}, {}>;
+        isRestockable: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_restockable";
+            tableName: "lttstore_variants";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
+        isPreorder: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_preorder";
+            tableName: "lttstore_variants";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: true;
+            hasDefault: true;
+            enumValues: undefined;
+            baseColumn: never;
+        }, {}, {}>;
         lastUpdated: import("drizzle-orm/pg-core").PgColumn<{
             name: "last_updated";
             tableName: "lttstore_variants";

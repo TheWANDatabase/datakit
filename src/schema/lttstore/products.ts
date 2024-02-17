@@ -1,6 +1,6 @@
-import {bigint, boolean, real, serial, text, timestamp, varchar} from "drizzle-orm/pg-core";
-import {relations} from "drizzle-orm";
-import {dataSchema} from "../schema";
+import { bigint, boolean, real, serial, text, timestamp, varchar } from "drizzle-orm/pg-core";
+import { relations } from "drizzle-orm";
+import { dataSchema } from "../schema";
 
 
 /**
@@ -17,7 +17,7 @@ export const products = dataSchema.table('lttstore_products', {
   id: serial('id').primaryKey().unique(),
 
   // ProductID as seen on the store itself (eg: 'onesie' or 'merino-t-shirt')
-  productId: varchar('product_id', {length: 128}).notNull().unique(),
+  productId: varchar('product_id', { length: 128 }).notNull().unique(),
 
   // Date imported (defaults to current time)
   importDate: timestamp('import_date').defaultNow(),
@@ -28,16 +28,18 @@ export const products = dataSchema.table('lttstore_products', {
   isOnSale: boolean('is_on_sale').notNull().default(false),
   standardPrice: real('standard_price').notNull().default(0),
   salePrice: real('sale_price').notNull().default(0),
-  variantCount: bigint('variant_count', {mode: "number"}).notNull().default(0),
-  type: varchar('product_type', {length: 128}).notNull().default(''),
+  variantCount: bigint('variant_count', { mode: "number" }).notNull().default(0),
+  type: varchar('product_type', { length: 128 }).notNull().default(''),
   retired: boolean('retired').notNull().default(false),
   isOutOfStock: boolean('is_out_of_stock').notNull().default(false),
-  supersededBy: varchar('superseded_by', {length: 128}).notNull().default(''),
-  imageCount: bigint('image_count', {mode: "number"}).notNull().default(0),
-  featureCount: bigint('feature_count', {mode: "number"}).notNull().default(0) // The number of episodes this product is featured in
+  supersededBy: varchar('superseded_by', { length: 128 }).notNull().default(''),
+  imageCount: bigint('image_count', { mode: "number" }).notNull().default(0),
+  willRestock: boolean('will_restock').notNull().default(true),
+  preorder: boolean('preorder').notNull().default(false),
+  featureCount: bigint('feature_count', { mode: "number" }).notNull().default(0) // The number of episodes this product is featured in
 })
 
-export const productsRelations = relations(products, ({one, many}) => ({
+export const productsRelations = relations(products, ({ one, many }) => ({
   images: many(products),
   supersededBy: one(products, {
     fields: [products.supersededBy],

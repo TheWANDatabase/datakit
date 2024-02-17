@@ -18,6 +18,8 @@ exports.variants = schema_1.dataSchema.table('lttstore_variants', {
     image: (0, pg_core_1.uuid)('image').references(() => media_1.media.id),
     retired: (0, pg_core_1.boolean)('retired').notNull().default(false),
     isOutOfStock: (0, pg_core_1.boolean)('is_out_of_stock').notNull().default(false),
+    isRestockable: (0, pg_core_1.boolean)('is_restockable').notNull().default(true),
+    isPreorder: (0, pg_core_1.boolean)('is_preorder').notNull().default(false),
     lastUpdated: (0, pg_core_1.timestamp)('last_updated').notNull().defaultNow(),
     imageCount: (0, pg_core_1.bigint)('image_count', { mode: "number" }).notNull().default(0),
     featureCount: (0, pg_core_1.bigint)('feature_count', { mode: "number" }).notNull().default(0) // The number of episodes this variant is featured in
